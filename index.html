@@ -1,0 +1,630 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="PROJECT MORPHEUS" />
+  <meta name="og:title" property="og:title" content="PROJECT MORPHEUS" />
+  <meta name="og:description" property="og:description" content="Morpheus - Your personal Travel agent to ease your daily life around your locality and enhance your travel experiences." />
+  <meta name="description" content="Morpheus - Your personal Travel agent to ease your daily life around your locality and enhance your travel experiences." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#131c24" />
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="logo192.png" />
+  <link rel="manifest" href="manifest.json" />
+  <title>PROJECT MORPHEUS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,200" />
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    :root{
+      --bg-color-0: #131c24;
+      --bg-color-1: #293a4a;
+      --bg-color-2: #7b92a9;
+      --bg-color-a: rgba(123, 146, 169, 0.2)
+    }
+
+    body{
+      overflow: hidden;
+      color: var(--bg-color-2);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(180deg, var(--bg-color-0), var(--bg-color-1));    }
+
+    .boot{
+      position: fixed;
+        display: grid;
+        z-index: 999999999999999;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    overflow: hidden;
+    align-content: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+    .boot img{width: 12.5em;}
+    .boot h1{font-size: 2.45rem; text-align: center; margin-top: -1.5rem;}
+    .main{
+      width: 100%;
+      height: 100%;
+      user-select: none;
+      padding-top: 10px;
+      opacity: 0;
+      transition: all 0.3s;
+      transform: scale(1.05);
+      background: var(--bg-color-0);
+    }
+
+    .main.active{
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .topNav{
+      background-color: var(--bg-color-1);
+      border-radius: 17.5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 15px;
+      margin: 10px;
+      margin-top: 0;
+      box-shadow: 0px 0px 20px var(--bg-color-0) inset;
+    }
+
+    .main-btn{
+      background: linear-gradient(145deg, #253443, rgb(46, 64, 81));
+      box-shadow:  5px 5px 10px #202d3a,
+                   -5px -5px 10px #32475a;
+      color: var(--bg-color-2);
+      padding: 10px;
+      border: none;
+      transition: all 0.3s;
+      border-radius: 10px;
+    }
+    .main-btn:active{
+      box-shadow:  5px 5px 5px #32475a,
+                   -5px -5px 5px #202d3a;
+    }
+    .main-btn span{font-size: 26px;}
+
+    .globalSearch{
+      width: 100%;      background: linear-gradient(145deg, #253443, rgb(46, 64, 81));
+      color: var(--bg-color-2);
+      padding: 10px;
+      height: 45px;
+      border: none;
+      transition: all 0.3s;
+      padding-left: 37.5px;
+      margin-left: -30px;
+      border-radius: 10px;
+      box-shadow:  5px 5px 10px #202d3a,
+                   -5px -5px 10px #32475a;
+    }
+    .globalSearch::placeholder{color: var(--bg-color-2);}
+    .globalSearch:focus-visible{
+      outline: transparent;
+      box-shadow:  5px 5px 5px #32475a,
+                   -5px -5px 5px #202d3a;
+    }
+
+    nav{
+      position: absolute;
+      left: -100%;
+      top: 10px;
+      width: calc(100%/1.05);
+      height: calc(100% - 20px);
+      border-radius: 17.5px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      background-color: #293a4a7b;
+      backdrop-filter: blur(45px);
+      transition: all 0.3s;
+      padding: 15px;
+      box-shadow: 0px 0px 20px var(--bg-color-0);
+      z-index: 9999;
+    }
+    nav.active{left: 0%;}
+
+    nav h3{
+      padding: 5px;
+      font-size: 26px;
+      padding-left: 75px;
+      width: max-content;
+    }
+
+    nav ul{list-style: none; margin-top: 30px; padding-left: 5px; padding-right: 5px;} 
+    nav ul li{
+      padding: 15px;
+      display: flex;
+      transition: all 0.3s;
+      gap: 10px;
+      align-items: center;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background: linear-gradient(145deg, #253443, rgb(46, 64, 81));
+      box-shadow:  5px 5px 10px #202d3a,
+                   -2.5px -2.5px 10px #32475a;
+    }
+    nav ul li:active{
+      box-shadow:  5px 5px 5px #32475a,
+                   -5px -5px 5px #202d3a;
+    }
+    nav ul li h4{margin-top: -3.5px;}
+    nav ul li span{transition: all 0.3s;}
+    a{color: var(--bg-color-2);}
+
+    nav ul li:active span{scale: 0.9;}
+
+    nav p{
+      position: absolute;
+      bottom: 17.5px;
+    }
+
+    nav img{
+      position: absolute;
+      bottom: 40px;
+      width: 10rem;
+      left: -12.5px;
+    }
+
+    .bottomNav{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background-color: var(--bg-color-1);
+      border-radius: 17.5px 17.5px 0px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: all 0.5s;
+      padding: 20px ;
+      width: 100%;
+      box-shadow: 0px 0px 10px var(--bg-color-0) inset;
+    }
+
+    .bottomNav .main-btn{
+      width: 6rem;
+      height: 4rem;
+    }
+    .bottomNav .main-btn span{ margin-top: -2.5px; font-size: 28px;}
+    .bottomNav .main-btn p{ margin-top: 3.5px;}
+    .main-btn.active{
+      box-shadow:  5px 5px 5px #32475a,
+                   -5px -5px 5px #202d3a;
+    }
+    .bottomNav .main-btn.ai{
+      border-radius: 50%;
+      width: 7rem;
+      height: 7rem;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 1px solid var(--bg-color-a);
+    }
+    .bottomNav .main-btn.ai span{font-size: 45px;}
+
+    .page{
+      padding: 10px;
+      padding-top: 0;
+      margin-top: -5px;
+      transition: all 0.5s;
+      opacity: 0;
+      pointer-events: none;position: absolute;
+    width: calc(100% - 5px);
+    height: calc(100% - 12.5rem);
+    overflow: hidden;
+    overflow-y: scroll;
+    transform: scaleX(0);
+    transform-origin: left;
+    }
+    .page.active{opacity: 1; pointer-events: all;  transform: scaleX(1);}
+    
+    .modal{
+      position: fixed;
+        z-index: 999999999999999999;
+    transition: all 0.3s;
+    overflow: hidden;
+    overflow-y: scroll;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    pointer-events: none;
+      background-color: #293a4ac7;
+      backdrop-filter: blur(45px);
+      padding: 10px;
+      height: auto;
+      max-height: calc(100% - 5rem);
+      width: calc(100% - 2rem);
+    border-radius: 20px;
+    padding-bottom: 3rem;
+    box-shadow: 0px 0px 20px var(--bg-color-0);
+    }
+    .modal.active{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: all; 
+    }
+
+    .modal img{width: 15rem; margin-bottom: -1.5rem;}
+
+    .page iframe{
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 20px;
+    }
+
+    #aiPage{
+      position: absolute;
+    background: var(--bg-color-0);
+    width: 100%;
+    height: calc(100% - 145px);
+    z-index: 10;
+    pointer-events: none;
+    margin: -10px;
+    display: grid;
+    transition: all 0.4s;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    }
+
+    .loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader h1 span{font-size: 2rem;}
+
+.loader:before , .loader:after{
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px var(--bg-color-a) inset;
+}
+.loader:after {
+  box-shadow: 0 5px 0 var(--bg-color-2) inset;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {  transform: rotate(0)}
+  100% { transform: rotate(360deg)}
+}
+
+  @media screen and (min-width: 850px) {
+    .bottomNav{top: 0; bottom: auto;  padding: 25px 20px;     border-radius: 0px 0px 17.5px 17.5px ;
+      width: calc(100%/3); left: 50%; transform: translateX(-50%);
+      box-shadow: 0px 0px 10px var(--bg-color-0);}
+      .bottomNav .main-btn{
+      width: 5rem;
+      height: 3rem;
+    }
+    .bottomNav .main-btn p{display: none;}
+    .bottomNav .main-btn.ai{bottom: auto; top: 0;}
+    nav{width: calc(100%/4);}
+    .page{height: calc(100% - 6rem);}
+  }
+
+  .loaderL {
+  display: inline-block;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+.loaderL::after {
+  content: '';  
+  width: 2.5px;
+  height: 2.5px;
+  border-radius: 50%;
+  background: currentColor;
+  position: absolute;
+  bottom: 4.5px;
+  right: -5.5px;
+  box-sizing: border-box;
+  animation: animloaderL 1s linear infinite;
+}
+
+@keyframes animloaderL {
+  0% {
+    box-shadow: 10px 0 rgba(255, 255, 255, 0), 20px 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 10px 0 white, 20px 0 rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 10px 0 white, 20px 0 white;
+  }
+}
+
+.historyItem {
+    width: 100%;
+    padding: 10px 17.5px;
+    padding-top: 15px;
+    background: var(--bg-color-a);
+    border-radius: 15px;
+    margin: 10px 0;
+    box-shadow: 5px 5px 10px #10181fbb inset;
+display: grid;
+}
+
+.historyItem a{
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-right: 0;
+    font-weight: 700;
+}
+
+.close-btn{
+  width: 30px;
+    padding: 5px;
+    margin-top: -2.5px;
+    border-radius: 10px;
+    position: absolute;
+    right: 20px;
+    box-shadow: 0px 0px 0px transparent;
+}
+
+.close-btn span{font-size: 18px;}
+
+  </style>
+</head>
+<body>
+  <div class="boot" id="boot">
+    <img src="logo512.png" />
+    <h1>PROJECT MORPHEUS</h1>
+  </div>
+  <div class="main" id="mainB">
+    <div class="topNav">
+      <button class="main-btn" style="z-index: 99999;" onclick="document.getElementById('nav').classList.toggle('active')"><span class="material-symbols-rounded">
+        menu
+        </span></button>
+      <div style="display: flex; align-items: center; flex: 1; padding-left: 12.5px;" onclick="switchPage('map', 'mapBtn')">
+        <span class="material-symbols-rounded" style="z-index: 2; font-size: 18px ;">
+          search
+        </span>
+          <input type="search" class="globalSearch" placeholder="Search on the map" id="gmap-search"/>
+      </div>
+      <button class="main-btn avatar" style="margin-left: -10px;" onclick="alert('Account integration is coming soon.')">
+        <span class="material-symbols-rounded">
+          person
+          </span>
+      </button>
+    </div>
+      <nav id="nav">
+        <h3>PROJECT MORPHEUS</h3>
+        <ul>
+          <li><span class="material-symbols-rounded">
+            help
+            </span> <h4>Help</h4></li>
+          <li><span class="material-symbols-rounded">
+            settings
+            </span> <h4>Settings</h4></li>
+          <li><span class="material-symbols-rounded">
+            support_agent
+            </span> <h4>Terms and Privacy</h4></li>
+          <li><span class="material-symbols-rounded">
+            copyright
+            </span> <h4>Credits</h4></li>
+          <li onclick="openModal('aboutM')"><span class="material-symbols-rounded">
+            info
+            </span> <h4>About</h4></li>
+        </ul>
+        <img src="logo512.png" />
+        <p>MIT Copyright (c) 2024 project Morpheus  <br>
+          Made by <a href="https://navaneet239.github.io">Navaneet.J</a> and Santhosh Sivakumar</p>
+      </nav>
+
+      <div class="modal" id="aboutM">
+        <div style="display: flex;justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
+          <h1>About</h1>
+          <button class="main-btn" onclick="closeModal('aboutM')" style="box-shadow: 0px 0px 0px transparent;">
+            <span class="material-symbols-rounded">
+              close
+              </span>
+          </button>
+        </div>
+        <div>
+          <CENTER>
+            <img src="logo512.png" />
+            <h2>PROJECT MORPHEUS</h2>
+            <p>v0.1.0 (Alpha edition)</p>
+          </CENTER>
+        </div>
+      </div>
+
+    <div class="content">
+      <div class="page active" id="map" style="padding: 10px;">
+        <iframe id="mapIfr" style="    height: calc(100% - 45px);" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p style="
+        text-align: center;
+        padding-top: 10px;
+    ">Powered by <a href="https://maps.google.com">Google Maps</a></p>
+      </div>
+      <div class="page" id="ai" style="overflow: hidden;">
+        <center style="
+            padding: 20px 0px;
+            padding-bottom: 35px;">
+          <h1>Ms. MORPHEUS</h1>
+          <h4>Your Personal Travel Assistant</h4>
+        </center>
+        <div id="aiPage">
+          <span class="loader">          <h1><span class="material-symbols-rounded">
+            robot_2
+            </span></h1></span>
+          <p>Your Assistant is <span class="loaderL">loading</span></p>
+        </div>
+        <div style="
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        ">
+          <iframe src="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx" style="margin-top: -155px;"></iframe>
+          <p style="
+          text-align: center;
+          padding-top: 10px;
+      ">Powered by <a href="https://copilot.microsoft.com">Copilot</a></p>
+        </div>
+      </div>
+      <div class="page" id="history">
+        <h1 style="margin-top: 10px; margin-bottom: 20px;">Your Search History</h1>
+        <div id="historyPage"></div>
+      </div>
+    </div>
+    <div class="bottomNav">
+      <button class="main-btn bottomBtn active" id="mapBtn" onclick="switchPage('map', 'mapBtn')"><span class="material-symbols-rounded">
+        near_me
+        </span><p>Map</p></button>
+      <button class="main-btn bottomBtn ai" id="aiBtn" onclick="switchPage('ai', 'aiBtn')"><span class="material-symbols-rounded">
+        robot_2
+        </span></button>
+      <button class="main-btn bottomBtn" id="recentsBtn" onclick="switchPage('history', 'recentsBtn')"><span class="material-symbols-rounded">
+        update
+        </span><p>History</p></button>
+    </div>
+  </div>
+
+  <script>
+    function boot(){
+      setTimeout(() => {
+        document.getElementById('boot').style.opacity = '0'
+        setTimeout(() => {
+          document.getElementById('mainB').classList.add('active')
+          document.getElementById('boot').style.display = 'none'
+          setTimeout(() => {
+            document.getElementById('aiPage').style.opacity = '0'
+          }, 7500);
+        }, 500);
+      }, 2000);
+    }
+
+    boot();
+
+    function switchPage(pg, pgBtn){
+      document.getElementById('map').classList.remove('active')
+      document.getElementById('history').classList.remove('active')
+      document.getElementById('ai').classList.remove('active')
+
+      document.getElementById('mapBtn').classList.remove('active')
+      document.getElementById('recentsBtn').classList.remove('active')
+      document.getElementById('aiBtn').classList.remove('active')
+
+      document.getElementById(pg).classList.add('active')
+      document.getElementById(pgBtn).classList.add('active')
+    }
+
+    function openModal(modal){
+      document.getElementById('nav').classList.toggle('active')
+      document.getElementById(modal).classList.add('active')
+    }
+    function closeModal(modal){
+      document.getElementById(modal).classList.remove('active')
+    }
+    document.getElementById('gmap-search').addEventListener('change', function() {
+    var query = this.value;
+    if (query) {
+        var mapFrame = document.getElementById('mapIfr');
+        var encodedQuery = encodeURIComponent(query);
+        var newSrc = `https://www.google.com/maps?q=${encodedQuery}&output=embed`;
+        mapFrame.src = newSrc;
+
+        // Save to localStorage
+        saveToHistory(query, newSrc);
+    }
+});
+
+function saveToHistory(query, src) {
+    // Retrieve the existing history or initialize as an empty array
+    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+    // Add the new search to the history
+    history.push({ query: query, src: src });
+
+    // Store the updated history
+    localStorage.setItem('searchHistory', JSON.stringify(history));
+
+    // Update the history display
+    displayHistory();
+}
+
+function displayHistory() {
+    var historyPage = document.getElementById('historyPage');
+    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+    // Clear the history display
+    historyPage.innerHTML = '';
+
+    // Populate the history display
+    history.forEach(function(item, index) {
+        var historyItem = document.createElement('div');
+        historyItem.className = 'historyItem';
+        historyItem.innerHTML = `
+                                <button class="main-btn close-btn" data-index="${index}"><span class="material-symbols-rounded">close</span></button>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <strong>${index + 1}.</strong>
+                <span>${item.query}</span>
+            </div>
+            <a href="#" class="main-btn" data-src="${item.src}">View on Map</a>
+        `;
+        historyPage.appendChild(historyItem);
+    });
+
+    // Add event listeners to all "View on Map" links
+    var links = historyPage.querySelectorAll('.main-btn');
+    links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var mapFrame = document.getElementById('mapIfr');
+            mapFrame.src = this.getAttribute('data-src');
+        });
+    });
+
+    // Add event listeners to all close buttons
+    var closeButtons = historyPage.querySelectorAll('.close-btn');
+    closeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var index = parseInt(this.getAttribute('data-index'));
+            deleteHistoryItem(index);
+        });
+    });
+}
+
+function deleteHistoryItem(index) {
+    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+    // Remove the item at the specified index
+    history.splice(index, 1);
+
+    // Store the updated history
+    localStorage.setItem('searchHistory', JSON.stringify(history));
+
+    // Update the history display
+    displayHistory();
+}
+
+// Load the history when the page loads
+window.onload = displayHistory;
+
+
+  </script>
+</body>
+</html>
