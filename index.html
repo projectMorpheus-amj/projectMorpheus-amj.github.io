@@ -14,6 +14,9 @@
   <link rel="manifest" href="manifest.json" />
   <title>PROJECT MORPHEUS</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     *{margin: 0; padding: 0; box-sizing: border-box;}
     :root{
@@ -45,7 +48,6 @@
     }
 
     .boot img{width: 12.5em;}
-    .boot h1{font-size: 2.45rem; text-align: center; margin-top: -1.5rem;}
     .main{
       width: 100%;
       height: 100%;
@@ -111,6 +113,17 @@
                    -5px -5px 5px #202d3a;
     }
 
+    .globalSearch::-webkit-search-cancel-button{
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  margin-left: .4em;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+  transition: all var(--transition-global);
+}
+.globalSearch::-webkit-search-cancel-button:hover{ -webkit-scale: 1.1; scale: 1.1;}
+.globalSearch::-webkit-search-cancel-button:active{ -webkit-scale: 1; scale: 1;}
+
     nav{
       position: absolute;
       left: -100%;
@@ -156,13 +169,8 @@
     nav ul li h4{margin-top: -3.5px;}
     nav ul li span{transition: all 0.3s;}
     a{color: var(--bg-color-2);}
-
     nav ul li:active span{scale: 0.9;}
-
-    nav p{
-      position: absolute;
-      bottom: 17.5px;
-    }
+    nav p{position: absolute;bottom: 17.5px;}
 
     nav img{
       position: absolute;
@@ -307,20 +315,6 @@
   100% { transform: rotate(360deg)}
 }
 
-  @media screen and (min-width: 850px) {
-    .bottomNav{top: 0; bottom: auto;  padding: 25px 20px;     border-radius: 0px 0px 17.5px 17.5px ;
-      width: calc(100%/3); left: 50%; transform: translateX(-50%);
-      box-shadow: 0px 0px 10px var(--bg-color-0);}
-      .bottomNav .main-btn{
-      width: 5rem;
-      height: 3rem;
-    }
-    .bottomNav .main-btn p{display: none;}
-    .bottomNav .main-btn.ai{bottom: auto; top: 0;}
-    nav{width: calc(100%/4);}
-    .page{height: calc(100% - 6rem);}
-  }
-
   .loaderL {
   display: inline-block;
   position: relative;
@@ -385,125 +379,389 @@ display: grid;
 
 .close-btn span{font-size: 18px;}
 
+#welcome{
+  display: block;
+ position: absolute;
+ left: 50%;
+    height: 100dvh;
+    width: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#welcome h1{
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.5rem;
+  transition: all 0.4s;
+  background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
+	  -webkit-background-clip: text;
+    text-align: center;
+	  background-clip: text;
+	  -webkit-text-fill-color: transparent;
+}
+
+#welcome h2{
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  transition: all 0.4s;
+  background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	  -webkit-text-fill-color: transparent;
+    width: max-content;
+    display: none;
+    opacity: 0;
+    font-size: 1.5rem;
+}
+
+#welcome h2 p{
+  font-size:15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
+  padding: 10px 15px;
+}
+
+#welcome h2 img{
+  width: 10rem;
+  margin-bottom: 1rem;
+}
+
+#welcome h4{
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
+	  -webkit-background-clip: text;
+    margin-bottom: 10px;
+	  background-clip: text;
+	  -webkit-text-fill-color: transparent;
+}
+
+.gget-started{
+  width: 90%;
+  position: absolute;
+  bottom: 30px;
+  margin: auto;
+  padding: 15px 17.5px;
+  font-size: 18px;
+  font-weight: 650;
+  opacity: 0;
+  display: none;
+}
+
+#get-started::before{
+  content: 'Terms and Conditions apply*';
+  font-size: 12px;
+  color: #7b92a9;
+  text-align: center;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  font-weight: normal;
+  transform: translateX(-50%);
+}
+
+#enter-name{
+  display: none;
+  width: 90%;
+  line-height: 3;
+}
+
+#app{display: none;}
+
+  @media screen and (min-width: 850px) {
+    .bottomNav{top: 0; bottom: auto;  padding: 25px 20px;     border-radius: 0px 0px 17.5px 17.5px ;
+      width: calc(100%/3); left: 50%; transform: translateX(-50%);
+      box-shadow: 0px 0px 10px var(--bg-color-0);}
+      .bottomNav .main-btn{
+      width: 5rem;
+      height: 3rem;
+    }
+    .bottomNav .main-btn p{display: none;}
+    .bottomNav .main-btn.ai{bottom: auto; top: 0;}
+    nav{width: calc(100%/4);}
+    .page{height: calc(100% - 6rem);}
+    #welcome h2 p{
+      font-size:20px;
+      text-align: center;
+    }
+ }
   </style>
 </head>
 <body>
   <div class="boot" id="boot">
     <img src="logo512.png" />
-    <h1>PROJECT MORPHEUS</h1>
   </div>
   <div class="main" id="mainB">
-    <div class="topNav">
-      <button class="main-btn" style="z-index: 99999;" onclick="document.getElementById('nav').classList.toggle('active')"><span class="material-symbols-rounded">
-        menu
-        </span></button>
-      <div style="display: flex; align-items: center; flex: 1; padding-left: 12.5px;" onclick="switchPage('map', 'mapBtn')">
-        <span class="material-symbols-rounded" style="z-index: 2; font-size: 18px ;">
-          search
-        </span>
-          <input type="search" class="globalSearch" placeholder="Search on the map" id="gmap-search"/>
+    <div id="welcome">
+      <h1 id="wel1">Welcome.</h1>
+      <h2 id="wel2">
+        <img src="Assets/world-tour.png" />
+        <br>
+        Your sustainable travel companion.
+        <br>
+        <p>Discover a new way to travel that cares for the planet. Project Morpheus connects you with eco-friendly destinations, stays, and experiences. Our mission is to make your journeys more sustainable while supporting local communities and preserving nature. Start exploring and make responsible travel choices that make a difference with us.</p>
+      </h2>
+      <button class="main-btn gget-started" id="get-started"
+        onclick="
+          document.getElementById('wel2').style.opacity = '0'
+          document.getElementById('get-started').style.opacity = '0'
+          setTimeout(() => {
+            document.getElementById('wel2').style.display = 'none'
+            document.getElementById('enter-name').style.display = 'block'
+          }, 1000);
+        "
+      >Get Started</button>
+      <div id="enter-name">
+        <h4>You first Name:</h4>
+        <input type="text" class="globalSearch" aria-label="first-name" style="margin: auto; padding: 10px;" placeholder="Enter your first Name" required>
+        <h4>You last Name (optional):</h4>
+        <input type="text" class="globalSearch" aria-label="second-name" style="margin: auto; padding: 10px;" placeholder="Enter your second Name">
+        <button class="main-btn gget-started" id="Save-user" style="display: flex; opacity: 1; align-items: center; justify-content: center; gap: 7.5px;" disabled> <span class="material-symbols-rounded">travel_explore</span>Start traveling</button>
       </div>
-      <button class="main-btn avatar" style="margin-left: -10px;" onclick="alert('Account integration is coming soon.')">
-        <span class="material-symbols-rounded">
-          person
-          </span>
-      </button>
     </div>
-      <nav id="nav">
-        <h3>PROJECT MORPHEUS</h3>
-        <ul>
-          <li><span class="material-symbols-rounded">
-            help
-            </span> <h4>Help</h4></li>
-          <li><span class="material-symbols-rounded">
-            settings
-            </span> <h4>Settings</h4></li>
-          <li><span class="material-symbols-rounded">
-            support_agent
-            </span> <h4>Terms and Privacy</h4></li>
-          <li><span class="material-symbols-rounded">
-            copyright
-            </span> <h4>Credits</h4></li>
-          <li onclick="openModal('aboutM')"><span class="material-symbols-rounded">
-            info
-            </span> <h4>About</h4></li>
-        </ul>
-        <img src="logo512.png" />
-        <p>MIT Copyright (c) 2024 project Morpheus  <br>
-          Made by <a href="https://navaneet239.github.io">Navaneet.J</a> and Santhosh Sivakumar</p>
-      </nav>
-
-      <div class="modal" id="aboutM">
-        <div style="display: flex;justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
-          <h1>About</h1>
-          <button class="main-btn" onclick="closeModal('aboutM')" style="box-shadow: 0px 0px 0px transparent;">
-            <span class="material-symbols-rounded">
-              close
-              </span>
-          </button>
+    <div id="app">
+      <div class="topNav">
+        <button class="main-btn" style="z-index: 99999;" onclick="document.getElementById('nav').classList.toggle('active')"><span class="material-symbols-rounded">
+          menu
+          </span></button>
+        <div style="display: flex; align-items: center; flex: 1; padding-left: 12.5px;" onclick="switchPage('map', 'mapBtn')">
+          <span class="material-symbols-rounded" style="z-index: 2; font-size: 18px ;">
+            search
+          </span>
+            <input type="search" class="globalSearch" placeholder="Search on the map" id="gmap-search"/>
         </div>
-        <div>
-          <CENTER>
-            <img src="logo512.png" />
-            <h2>PROJECT MORPHEUS</h2>
-            <p>v0.1.0 (Alpha edition)</p>
-          </CENTER>
-        </div>
+        <button class="main-btn avatar" style="margin-left: -10px;"  onclick="openModal('aboutAcc')
+              document.getElementById('nav').classList.remove('active')              ">
+          <span class="material-symbols-rounded">
+            person
+            </span>
+        </button>
       </div>
-
-    <div class="content">
-      <div class="page active" id="map" style="padding: 10px;">
-        <iframe id="mapIfr" style="    height: calc(100% - 45px);" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <p style="
-        text-align: center;
-        padding-top: 10px;
-    ">Powered by <a href="https://maps.google.com">Google Maps</a></p>
-      </div>
-      <div class="page" id="ai" style="overflow: hidden;">
-        <center style="
-            padding: 20px 0px;
-            padding-bottom: 35px;">
-          <h1>Ms. MORPHEUS</h1>
-          <h4>Your Personal Travel Assistant</h4>
-        </center>
-        <div id="aiPage">
-          <span class="loader">          <h1><span class="material-symbols-rounded">
-            robot_2
-            </span></h1></span>
-          <p>Your Assistant is <span class="loaderL">loading</span></p>
+        <nav id="nav">
+          <h3>PROJECT MORPHEUS</h3>
+          <ul>
+            <li><span class="material-symbols-rounded">
+              help
+              </span> <h4>Help</h4></li>
+            <li><span class="material-symbols-rounded">
+              policy
+              </span> <h4>Privacy Statement</h4></li>
+            <li><span class="material-symbols-rounded">
+              gavel
+              </span> <h4>Terms and Conditions</h4></li>
+            <li  onclick="openModal('aboutCr')"><span class="material-symbols-rounded">
+              copyright
+              </span> <h4>Credits</h4></li>
+            <li onclick="openModal('aboutM')"><span class="material-symbols-rounded">
+              info
+              </span> <h4>About</h4></li>
+          </ul>
+          <img src="logo512.png" />
+          <p>MIT Copyright (c) 2024 project Morpheus  <br>
+            Made by <a href="https://navaneet239.github.io">Navaneet.J</a> and Santhosh Sivakumar</p>
+        </nav>
+        <div class="modal" id="aboutM">
+          <div style="display: flex;justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
+            <h1>About</h1>
+            <button class="main-btn" onclick="closeModal('aboutM')" style="box-shadow: 0px 0px 0px transparent;">
+              <span class="material-symbols-rounded">
+                close
+                </span>
+            </button>
+          </div>
+          <div>
+            <CENTER>
+              <img src="logo512.png" />
+              <h2>PROJECT MORPHEUS</h2>
+              <p>v0.1.1 (Alpha edition)</p>
+            </CENTER>
+          </div>
         </div>
-        <div style="
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        overflow: hidden;
-        ">
-          <iframe src="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx" style="margin-top: -155px;"></iframe>
+        <div class="modal" id="aboutCr">
+          <div style="display: flex;justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
+            <h1>Credits</h1>
+            <button class="main-btn" onclick="closeModal('aboutCr')" style="box-shadow: 0px 0px 0px transparent;">
+              <span class="material-symbols-rounded">
+                close
+                </span>
+            </button>
+          </div>
+          <div>
+            <CENTER>
+              <img src="logo512.png" style="width: 10rem; margin-bottom: 0.35rem;"/>
+              <h2 style="margin-bottom: 0.25rem;">The lore of Credit<span class="loaderL">s</span></h2>
+              <div style="line-height: 2;">
+                <p><b>Maps</b>: <a href="https://maps.google.com">Google Maps</a></p>
+                <p><b>Chatbot</b>: <a href="https://copilot.microsoft.com">Copilot</a></p>
+                <p><b>Fonts and Icons</b>: <a href="https://fonts.google.com/icons">Google fonts - icons</a></p>
+              </div>
+            </CENTER>
+          </div>
+        </div>
+        <div class="modal" id="aboutAcc">
+          <div style="display: flex;justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
+            <h1>Your Account</h1>
+            <button class="main-btn" onclick="closeModal('aboutAcc')" style="box-shadow: 0px 0px 0px transparent;">
+              <span class="material-symbols-rounded">
+                close
+                </span>
+            </button>
+          </div>
+          <div>
+            <CENTER>
+              <div id="greeting" style="display: none; margin-top: 20px;">
+                <h1 id="user-greeting"></h1>
+            </div>
+            </CENTER>
+          </div>
+        </div>
+      <div class="content">
+        <div class="page active" id="map" style="padding: 10px;">
+          <iframe id="mapIfr" style="    height: calc(100% - 45px);" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <p style="
           text-align: center;
-          padding-top: 10px;
-      ">Powered by <a href="https://copilot.microsoft.com">Copilot</a></p>
+          padding-top: 10px;">Powered by <a href="https://maps.google.com">Google Maps</a></p>
+        </div>
+        <div class="page" id="ai" style="overflow: hidden;">
+          <center style="
+              padding: 20px 0px;
+              padding-bottom: 35px;">
+            <h1>Ms. MORPHEUS</h1>
+            <h4>Your Personal Travel Assistant</h4>
+          </center>
+          <div id="aiPage">
+            <span class="loader"><h1><span class="material-symbols-rounded">
+              robot_2
+              </span></h1></span>
+            <p>Your Assistant is <span class="loaderL">loading</span></p>
+          </div>
+          <div style="
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+          overflow: hidden;
+          ">
+            <iframe src="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx" style="margin-top: -155px;"></iframe>
+            <p style="
+            text-align: center;
+            padding-top: 10px;
+        ">Powered by <a href="https://copilot.microsoft.com">Copilot</a></p>
+          </div>
+        </div>
+        <div class="page" id="history">
+          <h1 style="margin-top: 10px; margin-bottom: 20px;">Your Search History</h1>
+          <div id="historyPage"></div>
         </div>
       </div>
-      <div class="page" id="history">
-        <h1 style="margin-top: 10px; margin-bottom: 20px;">Your Search History</h1>
-        <div id="historyPage"></div>
+      <div class="bottomNav">
+        <button class="main-btn bottomBtn active" id="mapBtn" onclick="switchPage('map', 'mapBtn')"><span class="material-symbols-rounded">
+          near_me
+          </span><p>Map</p></button>
+        <button class="main-btn bottomBtn ai" id="aiBtn" onclick="switchPage('ai', 'aiBtn')"><span class="material-symbols-rounded">
+          robot_2
+          </span></button>
+        <button class="main-btn bottomBtn" id="recentsBtn" onclick="switchPage('history', 'recentsBtn')"><span class="material-symbols-rounded">
+          update
+          </span><p>History</p></button>
       </div>
-    </div>
-    <div class="bottomNav">
-      <button class="main-btn bottomBtn active" id="mapBtn" onclick="switchPage('map', 'mapBtn')"><span class="material-symbols-rounded">
-        near_me
-        </span><p>Map</p></button>
-      <button class="main-btn bottomBtn ai" id="aiBtn" onclick="switchPage('ai', 'aiBtn')"><span class="material-symbols-rounded">
-        robot_2
-        </span></button>
-      <button class="main-btn bottomBtn" id="recentsBtn" onclick="switchPage('history', 'recentsBtn')"><span class="material-symbols-rounded">
-        update
-        </span><p>History</p></button>
     </div>
   </div>
 
   <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const firstNameInput = document.querySelector('input[aria-label="first-name"]');
+      const saveUserButton = document.getElementById('Save-user');
+
+      // Ensure elements are found
+      if (!firstNameInput || !saveUserButton) {
+          console.error("Required elements not found in the DOM.");
+          return;
+      }
+
+      // Function to check the input value and enable/disable the button
+      function checkInput() {
+          if (firstNameInput.value.trim() === '') {
+              saveUserButton.disabled = true;
+          } else {
+              saveUserButton.disabled = false;
+          }
+      }
+
+      // Initial check to set the button state
+      checkInput();
+
+      // Add event listener to the input to check value on each input event
+      firstNameInput.addEventListener('input', checkInput);
+
+      // Check localStorage for first load
+      if (localStorage.getItem('firstLoad') === null || localStorage.getItem('firstLoad') === 'true') {
+          // First load, show the welcome message
+          document.getElementById('welcome').style.display = 'flex';
+          welcomeBoot(); // Assuming this is a function you defined elsewhere
+      } else {
+          // Not the first load, hide the welcome message
+          document.getElementById('welcome').style.display = 'none';
+          document.getElementById('app').style.display = 'block';
+          displayGreeting();
+      }
+
+      // Handle the 'Save user' button click
+      saveUserButton.addEventListener('click', function() {
+          // Get the user's first and second names
+          const firstName = firstNameInput.value;
+          const secondName = document.querySelector('input[aria-label="second-name"]').value;
+
+          // Save names to localStorage
+          localStorage.setItem('firstName', firstName);
+          localStorage.setItem('secondName', secondName);
+
+          // Set localStorage to indicate that it's no longer the first load
+          localStorage.setItem('firstLoad', 'false');
+
+          // Hide the welcome message and show the app
+          document.getElementById('welcome').style.display = 'none';
+          document.getElementById('app').style.display = 'block';
+          displayGreeting();
+      });
+
+      function displayGreeting() {
+          // Retrieve the names from localStorage
+          const firstName = localStorage.getItem('firstName') || '';
+          const secondName = localStorage.getItem('secondName') || '';
+
+          // Create the greeting message
+          const greetingMessage = `Welcome, ${firstName} ${secondName}`.trim();
+
+          // Display the greeting message
+          document.getElementById('user-greeting').textContent = greetingMessage;
+          document.getElementById('greeting').style.display = 'block';
+      }
+  });
+
+    function welcomeBoot(){
+      setTimeout(() => {
+        document.getElementById('wel1').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('wel1').style.display = 'none';
+          document.getElementById('wel2').style.display = 'block';
+          document.getElementById('get-started').style.display = 'block';
+          setTimeout(() => {
+            document.getElementById('wel2').style.opacity = '1';
+            document.getElementById('get-started').style.opacity = '1';
+          }, 1250);
+        }, 500);
+      }, 4500);
+    }
+
     function boot(){
       setTimeout(() => {
         document.getElementById('boot').style.opacity = '0'
@@ -547,84 +805,84 @@ display: grid;
         var newSrc = `https://www.google.com/maps?q=${encodedQuery}&output=embed`;
         mapFrame.src = newSrc;
 
-        // Save to localStorage
-        saveToHistory(query, newSrc);
+            // Save to localStorage
+            saveToHistory(query, newSrc);
+        }
+    });
+
+    function saveToHistory(query, src) {
+        // Retrieve the existing history or initialize as an empty array
+        var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+        // Add the new search to the history
+        history.push({ query: query, src: src });
+
+        // Store the updated history
+        localStorage.setItem('searchHistory', JSON.stringify(history));
+
+        // Update the history display
+        displayHistory();
     }
-});
 
-function saveToHistory(query, src) {
-    // Retrieve the existing history or initialize as an empty array
-    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    function displayHistory() {
+        var historyPage = document.getElementById('historyPage');
+        var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-    // Add the new search to the history
-    history.push({ query: query, src: src });
+        // Clear the history display
+        historyPage.innerHTML = '';
 
-    // Store the updated history
-    localStorage.setItem('searchHistory', JSON.stringify(history));
-
-    // Update the history display
-    displayHistory();
-}
-
-function displayHistory() {
-    var historyPage = document.getElementById('historyPage');
-    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
-
-    // Clear the history display
-    historyPage.innerHTML = '';
-
-    // Populate the history display
-    history.forEach(function(item, index) {
-        var historyItem = document.createElement('div');
-        historyItem.className = 'historyItem';
-        historyItem.innerHTML = `
-                                <button class="main-btn close-btn" data-index="${index}"><span class="material-symbols-rounded">close</span></button>
-            <div style="display: flex; gap: 10px; align-items: center;">
-                <strong>${index + 1}.</strong>
-                <span>${item.query}</span>
-            </div>
-            <a href="#" class="main-btn" data-src="${item.src}">View on Map</a>
-        `;
-        historyPage.appendChild(historyItem);
-    });
-
-    // Add event listeners to all "View on Map" links
-    var links = historyPage.querySelectorAll('.main-btn');
-    links.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            var mapFrame = document.getElementById('mapIfr');
-            mapFrame.src = this.getAttribute('data-src');
+        // Populate the history display
+        history.forEach(function(item, index) {
+            var historyItem = document.createElement('div');
+            historyItem.className = 'historyItem';
+            historyItem.innerHTML = `<button class="main-btn close-btn" data-index="${index}"><span class="material-symbols-rounded">close</span></button>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <strong>${index + 1}.</strong>
+                    <span>${item.query}</span>
+                </div>
+                <a href="#" class="main-btn" data-src="${item.src}">View on Map</a>
+            `;
+            historyPage.appendChild(historyItem);
         });
-    });
 
-    // Add event listeners to all close buttons
-    var closeButtons = historyPage.querySelectorAll('.close-btn');
-    closeButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            var index = parseInt(this.getAttribute('data-index'));
-            deleteHistoryItem(index);
+        // Add event listeners to all "View on Map" links
+        var links = historyPage.querySelectorAll('.main-btn');
+        links.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var mapFrame = document.getElementById('mapIfr');
+                mapFrame.src = this.getAttribute('data-src');
+                switchPage('map', 'mapBtn')
+            });
         });
-    });
-}
 
-function deleteHistoryItem(index) {
-    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+        // Add event listeners to all close buttons
+        var closeButtons = historyPage.querySelectorAll('.close-btn');
+        closeButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var index = parseInt(this.getAttribute('data-index'));
+                deleteHistoryItem(index);
+                document.getElementById('mapIfr').src = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin'
+            });
+        });
+    }
 
-    // Remove the item at the specified index
-    history.splice(index, 1);
+    function deleteHistoryItem(index) {
+        var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-    // Store the updated history
-    localStorage.setItem('searchHistory', JSON.stringify(history));
+        // Remove the item at the specified index
+        history.splice(index, 1);
 
-    // Update the history display
-    displayHistory();
-}
+        // Store the updated history
+        localStorage.setItem('searchHistory', JSON.stringify(history));
 
-// Load the history when the page loads
-window.onload = displayHistory;
+        // Update the history display
+        displayHistory();
+    }
 
-
+    // Load the history when the page loads
+    window.onload = displayHistory;
   </script>
+  <script src="index.js"></script>
 </body>
 </html>
