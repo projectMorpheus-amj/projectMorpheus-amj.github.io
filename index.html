@@ -56,7 +56,9 @@
       opacity: 0;
       transition: all 0.3s;
       transform: scale(1.05);
-      background: var(--bg-color-0);
+      background: url('./Assets/wall.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
     .main.active{
@@ -65,16 +67,13 @@
     }
     
     .topNav{
-      background-color: var(--bg-color-1);
-      border-radius: 17.5px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 15px;
-      padding: 15px;
+      padding: 5px;
       margin: 10px;
       margin-top: 0;
-      box-shadow: 0px 0px 20px var(--bg-color-0) inset;
     }
 
     .main-btn{
@@ -143,11 +142,13 @@
     nav.active{left: 0%;}
 
     nav h3{
-      padding: 5px;
-      font-size: 26px;
-      padding-left: 75px;
-      width: max-content;
+      font-size: 25px;
+    padding-left: 55px;
+    width: max-content;
+    margin-top: 0px;
     }
+
+    nav a{text-decoration: none;}
 
     nav ul{list-style: none; margin-top: 30px; padding-left: 5px; padding-right: 5px;} 
     nav ul li{
@@ -225,7 +226,7 @@
       opacity: 0;
       pointer-events: none;position: absolute;
     width: calc(100% - 5px);
-    height: calc(100% - 12.5rem);
+    height: calc(100% - 11rem);
     overflow: hidden;
     overflow-y: scroll;
     transform: scaleX(0);
@@ -275,6 +276,7 @@
     width: 100%;
     height: calc(100% - 145px);
     z-index: 10;
+    border-radius: 20px;
     pointer-events: none;
     margin: -10px;
     display: grid;
@@ -347,14 +349,14 @@
 }
 
 .historyItem {
-    width: 100%;
+  width: 100%;
     padding: 10px 17.5px;
     padding-top: 15px;
-    background: var(--bg-color-a);
+    background: #202d3aba;
+    border: 1px solid var(--bg-color-a);
     border-radius: 15px;
-    margin: 10px 0;
-    box-shadow: 5px 5px 10px #10181fbb inset;
-display: grid;
+    margin: 15px 0;
+    display: grid;
 }
 
 .historyItem a{
@@ -390,6 +392,7 @@ display: grid;
     display: flex;
     align-items: center;
     justify-content: center;
+    filter: drop-shadow(0px 0px 6px black);
 }
 
 #welcome h1{
@@ -411,10 +414,6 @@ display: grid;
   font-style: normal;
   text-align: center;
   transition: all 0.4s;
-  background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
-	  -webkit-background-clip: text;
-	  background-clip: text;
-	  -webkit-text-fill-color: transparent;
     width: max-content;
     display: none;
     opacity: 0;
@@ -426,6 +425,7 @@ display: grid;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: justify;
   padding: 10px 15px;
+  color: rgb(235, 241, 255);
 }
 
 #welcome h2 img{
@@ -433,16 +433,15 @@ display: grid;
   margin-bottom: 1rem;
 }
 
-#welcome h4{
-  font-family: "Pacifico", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
-  background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
-	  -webkit-background-clip: text;
-    margin-bottom: 10px;
-	  background-clip: text;
-	  -webkit-text-fill-color: transparent;
+#welcome h3{
+  font-size: 2rem;
+    background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Pacifico", cursive;
+    font-weight: 200;
+    font-style: normal;
 }
 
 .gget-started{
@@ -475,6 +474,8 @@ display: grid;
   line-height: 3;
 }
 
+#welcome .globalSearch{padding-left: 15px;}
+
 #app{display: none;}
 
   @media screen and (min-width: 850px) {
@@ -494,6 +495,15 @@ display: grid;
       text-align: center;
     }
  }
+
+.accBox{
+  flex: 1;
+  background: var(--bg-color-a);
+  padding: 20px;
+  text-align: left;
+  border-radius: 15px;
+}
+ 
   </style>
 </head>
 <body>
@@ -506,7 +516,10 @@ display: grid;
       <h2 id="wel2">
         <img src="Assets/world-tour.png" />
         <br>
-        Your sustainable travel companion.
+        <span style="    background: -webkit-linear-gradient(0deg, #47637d, #7b92a9);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;">Your sustainable travel companion.</span>
         <br>
         <p>Discover a new way to travel that cares for the planet. Project Morpheus connects you with eco-friendly destinations, stays, and experiences. Our mission is to make your journeys more sustainable while supporting local communities and preserving nature. Start exploring and make responsible travel choices that make a difference with us.</p>
       </h2>
@@ -521,25 +534,31 @@ display: grid;
         "
       >Get Started</button>
       <div id="enter-name">
+        <h3>Let's create you a profile:</h3>
         <h4>You first Name:</h4>
-        <input type="text" class="globalSearch" aria-label="first-name" style="margin: auto; padding: 10px;" placeholder="Enter your first Name" required>
+        <input type="text" class="globalSearch" aria-label="first-name" style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter your first Name" required>
         <h4>You last Name (optional):</h4>
-        <input type="text" class="globalSearch" aria-label="second-name" style="margin: auto; padding: 10px;" placeholder="Enter your second Name">
+        <input type="text" class="globalSearch" aria-label="second-name" style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter your second Name">
+        <h4>Email:</h4>
+        <input type="email" class="globalSearch" aria-label="email" style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter your email id">
+        <h4>Password:</h4>
+        <input type="password" class="globalSearch" aria-label="password" style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter the password">
         <button class="main-btn gget-started" id="Save-user" style="display: flex; opacity: 1; align-items: center; justify-content: center; gap: 7.5px;" disabled> <span class="material-symbols-rounded">travel_explore</span>Start traveling</button>
+
       </div>
     </div>
     <div id="app">
       <div class="topNav">
-        <button class="main-btn" style="z-index: 99999;" onclick="document.getElementById('nav').classList.toggle('active')"><span class="material-symbols-rounded">
+        <button class="main-btn" style="z-index: 99999; box-shadow: 0px 0px 0px transparent;" onclick="document.getElementById('nav').classList.toggle('active')"><span class="material-symbols-rounded">
           menu
           </span></button>
         <div style="display: flex; align-items: center; flex: 1; padding-left: 12.5px;" onclick="switchPage('map', 'mapBtn')">
           <span class="material-symbols-rounded" style="z-index: 2; font-size: 18px ;">
             search
           </span>
-            <input type="search" class="globalSearch" placeholder="Search on the map" id="gmap-search"/>
+            <input type="search" class="globalSearch" placeholder="Search on the map"  style="box-shadow: 0px 0px 0px transparent;" id="gmap-search"/>
         </div>
-        <button class="main-btn avatar" style="margin-left: -10px;"  onclick="openModal('aboutAcc')
+        <button class="main-btn avatar" style="margin-left: -10px; box-shadow: 0px 0px 0px transparent;" onclick="openModal('aboutAcc')
               document.getElementById('nav').classList.remove('active')              ">
           <span class="material-symbols-rounded">
             person
@@ -550,14 +569,14 @@ display: grid;
           <h3>PROJECT MORPHEUS</h3>
           <ul>
             <li><span class="material-symbols-rounded">
-              help
-              </span> <h4>Help</h4></li>
-            <li><span class="material-symbols-rounded">
+              movie
+              </span> <h4>Watch Promo</h4></li>
+              <a href="privacy.html" target="_blank"><li><span class="material-symbols-rounded">
               policy
-              </span> <h4>Privacy Statement</h4></li>
-            <li><span class="material-symbols-rounded">
+              </span> <h4>Privacy Statement</h4></li></a>
+            <a href="terms.html" target="_blank"><li><span class="material-symbols-rounded">
               gavel
-              </span> <h4>Terms and Conditions</h4></li>
+              </span> <h4>Terms and Conditions</h4></li></a>
             <li  onclick="openModal('aboutCr')"><span class="material-symbols-rounded">
               copyright
               </span> <h4>Credits</h4></li>
@@ -570,8 +589,10 @@ display: grid;
             Made by <a href="https://navaneet239.github.io">Navaneet.J</a> and Santhosh Sivakumar</p>
         </nav>
         <div class="modal" id="aboutM">
-          <div style="display: flex;justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
-            <h1>About</h1>
+          <div style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
+            <h1  style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
+            font-weight: 200;
+            font-style: normal;">About</h1>
             <button class="main-btn" onclick="closeModal('aboutM')" style="box-shadow: 0px 0px 0px transparent;">
               <span class="material-symbols-rounded">
                 close
@@ -582,13 +603,15 @@ display: grid;
             <CENTER>
               <img src="logo512.png" />
               <h2>PROJECT MORPHEUS</h2>
-              <p>v0.1.1 (Alpha edition)</p>
+              <p>v0.1.5 (Alpha edition)</p>
             </CENTER>
           </div>
         </div>
         <div class="modal" id="aboutCr">
-          <div style="display: flex;justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
-            <h1>Credits</h1>
+          <div style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
+            <h1  style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
+            font-weight: 200;
+            font-style: normal;">Credits</h1>
             <button class="main-btn" onclick="closeModal('aboutCr')" style="box-shadow: 0px 0px 0px transparent;">
               <span class="material-symbols-rounded">
                 close
@@ -607,9 +630,11 @@ display: grid;
             </CENTER>
           </div>
         </div>
-        <div class="modal" id="aboutAcc">
-          <div style="display: flex;justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
-            <h1>Your Account</h1>
+        <div class="modal" id="aboutAcc" style="padding-bottom: 12.5px;">
+          <div style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
+            <h1 style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
+            font-weight: 200;
+            font-style: normal;">Account Panel</h1>
             <button class="main-btn" onclick="closeModal('aboutAcc')" style="box-shadow: 0px 0px 0px transparent;">
               <span class="material-symbols-rounded">
                 close
@@ -619,7 +644,7 @@ display: grid;
           <div>
             <CENTER>
               <div id="greeting" style="display: none; margin-top: 20px;">
-                <h1 id="user-greeting"></h1>
+                <div id="user-greeting"></div>
             </div>
             </CENTER>
           </div>
@@ -658,7 +683,25 @@ display: grid;
           </div>
         </div>
         <div class="page" id="history">
-          <h1 style="margin-top: 10px; margin-bottom: 20px;">Your Search History</h1>
+          <h1 style="margin-top: 10px; margin-bottom: 10px; text-align: center; width: 100%;">Your Recent Visits</h1>
+          <div style="display: flex; align-items: center; gap: 20px; justify-content: center; margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="material-symbols-rounded">travel_explore</span>
+              <p id="totalSearch"></p>
+            </div>
+            <p>|</p>
+            <div style="display: flex; align-items: center; gap: 15px;"
+              onclick="alert('Powered by Ecosia - A greenest way to search. Every search you do in Morpheus, Ecosia will plant a tree. Learn more on www.ecosia.org')"  
+            >
+              <span class="material-symbols-rounded">nature_people</span>
+              <p id="totalSearchPlant"></p>
+            </div>
+            <p>|</p>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="material-symbols-rounded">flag_2</span>
+              <p id="milesScore"></p>
+            </div>
+          </div>
           <div id="historyPage"></div>
         </div>
       </div>
@@ -704,13 +747,9 @@ display: grid;
 
       // Check localStorage for first load
       if (localStorage.getItem('firstLoad') === null || localStorage.getItem('firstLoad') === 'true') {
-          // First load, show the welcome message
-          document.getElementById('welcome').style.display = 'flex';
           welcomeBoot(); // Assuming this is a function you defined elsewhere
       } else {
-          // Not the first load, hide the welcome message
-          document.getElementById('welcome').style.display = 'none';
-          document.getElementById('app').style.display = 'block';
+          welcomeBackBoot();
           displayGreeting();
       }
 
@@ -719,10 +758,12 @@ display: grid;
           // Get the user's first and second names
           const firstName = firstNameInput.value;
           const secondName = document.querySelector('input[aria-label="second-name"]').value;
-
+          const email = document.querySelector('input[aria-label="email"]').value;
+          
           // Save names to localStorage
           localStorage.setItem('firstName', firstName);
           localStorage.setItem('secondName', secondName);
+          localStorage.setItem('mailId', email);
 
           // Set localStorage to indicate that it's no longer the first load
           localStorage.setItem('firstLoad', 'false');
@@ -737,13 +778,44 @@ display: grid;
           // Retrieve the names from localStorage
           const firstName = localStorage.getItem('firstName') || '';
           const secondName = localStorage.getItem('secondName') || '';
+          const email = localStorage.getItem('mailId') || '';
+
+    // Retrieve the homebase from localStorage
+    const homeBase = localStorage.getItem('homeBase') || 'Click to input';
 
           // Create the greeting message
           const greetingMessage = `Welcome, ${firstName} ${secondName}`.trim();
-
+          const emailMsg = email.trim();
           // Display the greeting message
-          document.getElementById('user-greeting').textContent = greetingMessage;
+          document.getElementById('user-greeting').innerHTML = 
+          `
+            <h2 style="margin-bottom: 5px">${greetingMessage}</h2>
+            <p>${emailMsg}</p>
+            <br>
+            <div style="display: flex; gap: 10px">
+              <div class='accBox'>
+              <p><b>Your Miles Score: </b></p>
+              <p><span id="accMileScore"></span></p>
+            </div>
+            <div class='accBox'>
+              <p><b>Your Home base:</b></p>
+              <p id="homeBase">${homeBase}</p>
+            </div>
+            </div>
+            `
+          ;
           document.getElementById('greeting').style.display = 'block';
+
+          document.getElementById('homeBase').addEventListener('click', function() {
+        // Prompt the user to input their Homebase
+        const newHomeBase = prompt("Enter your Home base (City, Country):");
+
+        // If the user enters a value, save it to localStorage and update the display
+        if (newHomeBase) {
+            localStorage.setItem('homeBase', newHomeBase);
+            document.getElementById('homeBase').textContent = newHomeBase;
+        }
+    });
       }
   });
 
@@ -758,6 +830,18 @@ display: grid;
             document.getElementById('wel2').style.opacity = '1';
             document.getElementById('get-started').style.opacity = '1';
           }, 1250);
+        }, 500);
+      }, 4500);
+    }
+
+    function welcomeBackBoot(){
+      document.getElementById('wel1').style.lineHeight = '1.25'
+      document.getElementById('wel1').innerHTML = 'Welcome <br> Back.';
+      setTimeout(() => {
+        document.getElementById('welcome').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('welcome').style.display = 'none';
+          document.getElementById('app').style.display = 'block';
         }, 500);
       }, 4500);
     }
@@ -844,6 +928,15 @@ display: grid;
             `;
             historyPage.appendChild(historyItem);
         });
+
+            // Update the total number of recent visits
+            document.getElementById('totalSearch').textContent = history.length;
+            document.getElementById('totalSearchPlant').textContent = history.length;
+            
+                // Calculate and update the miles score
+          var milesScore = (history.length * 0.2).toFixed(1);
+          document.getElementById('milesScore').textContent = milesScore;
+          document.getElementById('accMileScore').textContent = milesScore;
 
         // Add event listeners to all "View on Map" links
         var links = historyPage.querySelectorAll('.main-btn');
