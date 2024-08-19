@@ -89,6 +89,7 @@
     .main-btn:active{
       box-shadow:  5px 5px 5px #32475a,
                    -5px -5px 5px #202d3a;
+              transform: scale(0.95);
     }
     .main-btn span{font-size: 26px;}
 
@@ -164,8 +165,8 @@
                    -2.5px -2.5px 10px #32475a;
     }
     nav ul li:active{
-      box-shadow:  5px 5px 5px #32475a,
-                   -5px -5px 5px #202d3a;
+      box-shadow:  5px 5px 5px #32475a inset,
+                   -5px -5px 5px #202d3a inset;
     }
     nav ul li h4{margin-top: -3.5px;}
     nav ul li span{transition: all 0.3s;}
@@ -685,19 +686,23 @@
         <div class="page" id="history">
           <h1 style="margin-top: 10px; margin-bottom: 10px; text-align: center; width: 100%;">Your Recent Visits</h1>
           <div style="display: flex; align-items: center; gap: 20px; justify-content: center; margin-bottom: 20px;">
-            <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px;"
+              onclick="alert('Your Total Visits counter - As you surf the map, the counter will increase.')"
+            >
               <span class="material-symbols-rounded">travel_explore</span>
               <p id="totalSearch"></p>
             </div>
             <p>|</p>
             <div style="display: flex; align-items: center; gap: 15px;"
-              onclick="alert('Powered by Ecosia - A greenest way to search. Every search you do in Morpheus, Ecosia will plant a tree. Learn more on www.ecosia.org')"  
+              onclick="alert('Powered by Ecosia - The greenest way to search. For every search you do in Morpheus, Ecosia will plant a tree. Learn more on www.ecosia.org')"  
             >
               <span class="material-symbols-rounded">nature_people</span>
               <p id="totalSearchPlant"></p>
             </div>
             <p>|</p>
-            <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px;"
+              onclick="alert('The Miles Score: A credit based rewarding system where each search or a contribution wins you points that can be redeemed!')"
+            >
               <span class="material-symbols-rounded">flag_2</span>
               <p id="milesScore"></p>
             </div>
@@ -895,86 +900,118 @@
     });
 
     function saveToHistory(query, src) {
-        // Retrieve the existing history or initialize as an empty array
-        var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    // Retrieve the existing history or initialize as an empty array
+    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-        // Add the new search to the history
-        history.push({ query: query, src: src });
+    // Add the new search to the history
+    history.push({ query: query, src: src });
 
-        // Store the updated history
-        localStorage.setItem('searchHistory', JSON.stringify(history));
+    // Store the updated history
+    localStorage.setItem('searchHistory', JSON.stringify(history));
 
-        // Update the history display
-        displayHistory();
+    // Update the total number of recent visits
+    var totalSearchPlant = parseInt(localStorage.getItem('totalSearchPlant')) || 0;
+    totalSearchPlant += 1;
+    localStorage.setItem('totalSearchPlant', totalSearchPlant);
+
+    // Update the history display
+    displayHistory();
+}
+
+function displayHistory() {
+    var historyPage = document.getElementById('historyPage');
+    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+    // Clear the history display
+    historyPage.innerHTML = '';
+
+    // Populate the history display
+    history.forEach(function(item, index) {
+        var historyItem = document.createElement('div');
+        historyItem.className = 'historyItem';
+        historyItem.innerHTML = `<button class="main-btn close-btn" data-index="${index}"><span class="material-symbols-rounded">close</span></button>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <strong>${index + 1}.</strong>
+                <span>${item.query}</span>
+            </div>
+            <a href="#" class="main-btn" data-src="${item.src}">View on Map</a>
+        `;
+        historyPage.appendChild(historyItem);
+    });
+
+    // Update the total number of recent visits
+    document.getElementById('totalSearch').textContent = history.length;
+
+    // Check if the totalSearchPlant element exists and update it
+    var totalSearchPlantElement = document.getElementById('totalSearchPlant');
+    if (totalSearchPlantElement) {
+        var totalSearchPlant = localStorage.getItem('totalSearchPlant') || 0;
+        totalSearchPlantElement.textContent = totalSearchPlant;
     }
 
-    function displayHistory() {
-        var historyPage = document.getElementById('historyPage');
-        var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    // Calculate the miles score
+    var milesScore = (history.length * 0.2).toFixed(1);
 
-        // Clear the history display
-        historyPage.innerHTML = '';
+    // Save the miles score to localStorage
+    localStorage.setItem('milesScore', milesScore);
 
-        // Populate the history display
-        history.forEach(function(item, index) {
-            var historyItem = document.createElement('div');
-            historyItem.className = 'historyItem';
-            historyItem.innerHTML = `<button class="main-btn close-btn" data-index="${index}"><span class="material-symbols-rounded">close</span></button>
-                <div style="display: flex; gap: 10px; align-items: center;">
-                    <strong>${index + 1}.</strong>
-                    <span>${item.query}</span>
-                </div>
-                <a href="#" class="main-btn" data-src="${item.src}">View on Map</a>
-            `;
-            historyPage.appendChild(historyItem);
-        });
-
-            // Update the total number of recent visits
-            document.getElementById('totalSearch').textContent = history.length;
-            document.getElementById('totalSearchPlant').textContent = history.length;
-            
-                // Calculate and update the miles score
-          var milesScore = (history.length * 0.2).toFixed(1);
-          document.getElementById('milesScore').textContent = milesScore;
-          document.getElementById('accMileScore').textContent = milesScore;
-
-        // Add event listeners to all "View on Map" links
-        var links = historyPage.querySelectorAll('.main-btn');
-        links.forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                var mapFrame = document.getElementById('mapIfr');
-                mapFrame.src = this.getAttribute('data-src');
-                switchPage('map', 'mapBtn')
-            });
-        });
-
-        // Add event listeners to all close buttons
-        var closeButtons = historyPage.querySelectorAll('.close-btn');
-        closeButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                var index = parseInt(this.getAttribute('data-index'));
-                deleteHistoryItem(index);
-                document.getElementById('mapIfr').src = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin'
-            });
-        });
+    // Update the miles score in the UI
+    var milesScoreElement = document.getElementById('milesScore');
+    if (milesScoreElement) {
+        milesScoreElement.textContent = milesScore;
     }
 
-    function deleteHistoryItem(index) {
-        var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
-
-        // Remove the item at the specified index
-        history.splice(index, 1);
-
-        // Store the updated history
-        localStorage.setItem('searchHistory', JSON.stringify(history));
-
-        // Update the history display
-        displayHistory();
+    var accMileScoreElement = document.getElementById('accMileScore');
+    if (accMileScoreElement) {
+        accMileScoreElement.textContent = milesScore;
     }
 
-    // Load the history when the page loads
-    window.onload = displayHistory;
+    // Add event listeners to all "View on Map" links
+    var links = historyPage.querySelectorAll('.main-btn');
+    links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var mapFrame = document.getElementById('mapIfr');
+            mapFrame.src = this.getAttribute('data-src');
+            switchPage('map', 'mapBtn');
+        });
+    });
+
+    // Add event listeners to all close buttons
+    var closeButtons = historyPage.querySelectorAll('.close-btn');
+    closeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var index = parseInt(this.getAttribute('data-index'));
+            deleteHistoryItem(index);
+            document.getElementById('mapIfr').src = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin';
+        });
+    });
+}
+
+function deleteHistoryItem(index) {
+    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+    // Remove the item at the specified index
+    history.splice(index, 1);
+
+    // Store the updated history
+    localStorage.setItem('searchHistory', JSON.stringify(history));
+
+    // Update the history display
+    displayHistory();
+}
+
+// Load the history when the page loads
+window.onload = function() {
+    displayHistory();
+
+    // Retrieve and display the stored Miles Score
+    var storedMilesScore = localStorage.getItem('milesScore') || '0.0';
+    document.getElementById('milesScore').textContent = storedMilesScore;
+    document.getElementById('accMileScore').textContent = storedMilesScore;
+};
+
+
   </script>
   <script src="index.js"></script>
 </body>
