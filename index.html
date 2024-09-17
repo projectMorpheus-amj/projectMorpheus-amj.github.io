@@ -1,54 +1,66 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="title" content="PROJECT MORPHEUS" />
   <meta name="og:title" property="og:title" content="PROJECT MORPHEUS" />
-  <meta name="og:description" property="og:description" content="Morpheus - Your personal Travel agent to ease your daily life around your locality and enhance your travel experiences." />
-  <meta name="description" content="Morpheus - Your personal Travel agent to ease your daily life around your locality and enhance your travel experiences." />
+  <meta name="og:description" property="og:description"
+    content="Morpheus - Your personal Travel agent to ease your daily life around your locality and enhance your travel experiences." />
+  <meta name="description"
+    content="Morpheus - Your personal Travel agent to ease your daily life around your locality and enhance your travel experiences." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#131c24" />
-
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="logo192.png" />
   <link rel="manifest" href="manifest.json" />
   <title>PROJECT MORPHEUS</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,200" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    *{margin: 0; padding: 0; box-sizing: border-box;}
-    :root{
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
       --bg-color-0: #131c24;
       --bg-color-1: #293a4a;
       --bg-color-2: #7b92a9;
       --bg-color-a: rgba(123, 146, 169, 0.2)
     }
 
-    body{
+    body {
       overflow: hidden;
       color: var(--bg-color-2);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(180deg, var(--bg-color-0), var(--bg-color-1));    }
-
-    .boot{
-      position: fixed;
-        display: grid;
-        z-index: 999999999999999;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    overflow: hidden;
-    align-content: center;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+      background: linear-gradient(180deg, var(--bg-color-0), var(--bg-color-1));
     }
 
-    .boot img{width: 12.5em;}
-    .main{
+    .boot {
+      position: fixed;
+      display: grid;
+      z-index: 999999999999999;
+      justify-items: center;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      overflow: hidden;
+      align-content: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .boot img {
+      width: 12.5em;
+    }
+
+    .main {
       width: 100%;
       height: 100%;
       user-select: none;
@@ -61,12 +73,12 @@
       background-position: center;
     }
 
-    .main.active{
+    .main.active {
       opacity: 1;
       transform: scale(1);
     }
-    
-    .topNav{
+
+    .topNav {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -76,25 +88,30 @@
       margin-top: 0;
     }
 
-    .main-btn{
+    .main-btn {
       background: linear-gradient(145deg, #253443, rgb(46, 64, 81));
-      box-shadow:  5px 5px 10px #202d3a,
-                   -5px -5px 10px #32475a;
+      box-shadow: 5px 5px 10px #202d3a,
+        -5px -5px 10px #32475a;
       color: var(--bg-color-2);
       padding: 10px;
       border: none;
       transition: all 0.3s;
       border-radius: 10px;
     }
-    .main-btn:active{
-      box-shadow:  5px 5px 5px #32475a,
-                   -5px -5px 5px #202d3a;
-              transform: scale(0.95);
-    }
-    .main-btn span{font-size: 26px;}
 
-    .globalSearch{
-      width: 100%;      background: linear-gradient(145deg, #253443, rgb(46, 64, 81));
+    .main-btn:active {
+      box-shadow: 5px 5px 5px #32475a,
+        -5px -5px 5px #202d3a;
+      transform: scale(0.95);
+    }
+
+    .main-btn span {
+      font-size: 26px;
+    }
+
+    .globalSearch {
+      width: 100%;
+      background: linear-gradient(145deg, #253443, rgb(46, 64, 81));
       color: var(--bg-color-2);
       padding: 10px;
       height: 45px;
@@ -103,28 +120,40 @@
       padding-left: 37.5px;
       margin-left: -30px;
       border-radius: 10px;
-      box-shadow:  5px 5px 10px #202d3a,
-                   -5px -5px 10px #32475a;
+      box-shadow: 5px 5px 10px #202d3a,
+        -5px -5px 10px #32475a;
     }
-    .globalSearch::placeholder{color: var(--bg-color-2);}
-    .globalSearch:focus-visible{
+
+    .globalSearch::placeholder {
+      color: var(--bg-color-2);
+    }
+
+    .globalSearch:focus-visible {
       outline: transparent;
-      box-shadow:  5px 5px 5px #32475a,
-                   -5px -5px 5px #202d3a;
+      box-shadow: 5px 5px 5px #32475a,
+        -5px -5px 5px #202d3a;
     }
 
-    .globalSearch::-webkit-search-cancel-button{
-  -webkit-appearance: none;
-  height: 18px;
-  width: 18px;
-  margin-left: .4em;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
-  transition: all var(--transition-global);
-}
-.globalSearch::-webkit-search-cancel-button:hover{ -webkit-scale: 1.1; scale: 1.1;}
-.globalSearch::-webkit-search-cancel-button:active{ -webkit-scale: 1; scale: 1;}
+    .globalSearch::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      height: 18px;
+      width: 18px;
+      margin-left: .4em;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+      transition: all var(--transition-global);
+    }
 
-    nav{
+    .globalSearch::-webkit-search-cancel-button:hover {
+      -webkit-scale: 1.1;
+      scale: 1.1;
+    }
+
+    .globalSearch::-webkit-search-cancel-button:active {
+      -webkit-scale: 1;
+      scale: 1;
+    }
+
+    nav {
       position: absolute;
       left: -100%;
       top: 10px;
@@ -140,19 +169,30 @@
       box-shadow: 0px 0px 20px var(--bg-color-0);
       z-index: 9999;
     }
-    nav.active{left: 0%;}
 
-    nav h3{
-      font-size: 25px;
-    padding-left: 55px;
-    width: max-content;
-    margin-top: 0px;
+    nav.active {
+      left: 0%;
     }
 
-    nav a{text-decoration: none;}
+    nav h3 {
+      font-size: 25px;
+      padding-left: 55px;
+      width: max-content;
+      margin-top: 0px;
+    }
 
-    nav ul{list-style: none; margin-top: 30px; padding-left: 5px; padding-right: 5px;} 
-    nav ul li{
+    nav a {
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      margin-top: 30px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    nav ul li {
       padding: 15px;
       display: flex;
       transition: all 0.3s;
@@ -161,27 +201,44 @@
       border-radius: 10px;
       margin-bottom: 20px;
       background: linear-gradient(145deg, #253443, rgb(46, 64, 81));
-      box-shadow:  5px 5px 10px #202d3a,
-                   -2.5px -2.5px 10px #32475a;
+      box-shadow: 5px 5px 10px #202d3a,
+        -2.5px -2.5px 10px #32475a;
     }
-    nav ul li:active{
-      box-shadow:  5px 5px 5px #32475a inset,
-                   -5px -5px 5px #202d3a inset;
-    }
-    nav ul li h4{margin-top: -3.5px;}
-    nav ul li span{transition: all 0.3s;}
-    a{color: var(--bg-color-2);}
-    nav ul li:active span{scale: 0.9;}
-    nav p{position: absolute;bottom: 17.5px;}
 
-    nav img{
+    nav ul li:active {
+      box-shadow: 5px 5px 5px #32475a inset,
+        -5px -5px 5px #202d3a inset;
+    }
+
+    nav ul li h4 {
+      margin-top: -3.5px;
+    }
+
+    nav ul li span {
+      transition: all 0.3s;
+    }
+
+    a {
+      color: var(--bg-color-2);
+    }
+
+    nav ul li:active span {
+      scale: 0.9;
+    }
+
+    nav p {
+      position: absolute;
+      bottom: 17.5px;
+    }
+
+    nav img {
       position: absolute;
       bottom: 40px;
       width: 10rem;
       left: -12.5px;
     }
 
-    .bottomNav{
+    .bottomNav {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -192,321 +249,430 @@
       justify-content: space-between;
       gap: 20px;
       transition: all 0.5s;
-      padding: 20px ;
+      padding: 20px;
       width: 100%;
       box-shadow: 0px 0px 10px var(--bg-color-0) inset;
     }
 
-    .bottomNav .main-btn{
+    .bottomNav .main-btn {
       width: 6rem;
       height: 4rem;
     }
-    .bottomNav .main-btn span{ margin-top: -2.5px; font-size: 28px;}
-    .bottomNav .main-btn p{ margin-top: 3.5px;}
-    .main-btn.active{
-      box-shadow:  5px 5px 5px #32475a,
-                   -5px -5px 5px #202d3a;
-    }
-    .bottomNav .main-btn.ai{
-      border-radius: 50%;
-      width: 7rem;
-      height: 7rem;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 1px solid var(--bg-color-a);
-    }
-    .bottomNav .main-btn.ai span{font-size: 45px;}
 
-    .page{
+    .bottomNav .main-btn span {
+      margin-top: -2.5px;
+      font-size: 30px;
+    }
+
+    .bottomNav .main-btn p {
+      margin-top: 3.5px;
+    }
+
+    .main-btn.active {
+      box-shadow: 5px 5px 5px #32475a,
+        -5px -5px 5px #202d3a;
+    }
+
+    .page {
       padding: 10px;
       padding-top: 0;
       margin-top: -5px;
       transition: all 0.5s;
       opacity: 0;
-      pointer-events: none;position: absolute;
-    width: calc(100% - 5px);
-    height: calc(100% - 11rem);
-    overflow: hidden;
-    overflow-y: scroll;
-    transform: scaleX(0);
-    transform-origin: left;
+      pointer-events: none;
+      position: absolute;
+      width: calc(100% - 5px);
+      height: calc(100% - 11rem);
+      overflow: hidden;
+      overflow-y: scroll;
+      transform: scaleX(0);
+      transform-origin: left;
     }
-    .page.active{opacity: 1; pointer-events: all;  transform: scaleX(1);}
-    
-    .modal{
+
+    .page.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: scaleX(1);
+    }
+
+    .modal {
       position: fixed;
-        z-index: 999999999999999999;
-    transition: all 0.3s;
-    overflow: hidden;
-    overflow-y: scroll;
-    left: 50%;
-    top: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
-    pointer-events: none;
-      background-color: #293a4ac7;
+      z-index: 999999999999999999;
+      transition: all 0.3s;
+      overflow: hidden;
+      overflow-y: scroll;
+      left: 50%;
+      top: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+      pointer-events: none;
+      background-color: #15202b;
       backdrop-filter: blur(45px);
-      padding: 10px;
+      padding: 15px;
       height: auto;
-      max-height: calc(100% - 5rem);
+      max-height: calc(100% - 10rem);
       width: calc(100% - 2rem);
-    border-radius: 20px;
-    padding-bottom: 3rem;
-    box-shadow: 0px 0px 20px var(--bg-color-0);
-    }
-    .modal.active{
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    pointer-events: all; 
+      border-radius: 10px;
+      padding-bottom: 3.1rem;
+      box-shadow: 0px 0px 20px var(--bg-color-0);
     }
 
-    .modal img{width: 15rem; margin-bottom: -1.5rem;}
+    .modal.active {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      pointer-events: all;
+    }
 
-    .page iframe{
+    .modal img {
+      width: 15rem;
+      margin-bottom: -1.5rem;
+    }
+
+    .page iframe {
       width: 100%;
       height: 100%;
       border: 0;
       border-radius: 20px;
     }
 
-    #aiPage{
-      position: absolute;
-    background: var(--bg-color-0);
-    width: 100%;
-    height: calc(100% - 145px);
-    z-index: 10;
-    border-radius: 20px;
-    pointer-events: none;
-    margin: -10px;
-    display: grid;
-    transition: all 0.4s;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-    gap: 20px;
-    }
-
     .loader {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  
-  display: flex;
-    align-items: center;
-    justify-content: center;
-}
+      position: relative;
+      width: 100px;
+      height: 100px;
 
-.loader h1 span{font-size: 2rem;}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.loader:before , .loader:after{
-  content: '';
-  border-radius: 50%;
-  position: absolute;
-  inset: 0;
-  box-shadow: 0 0 10px 2px var(--bg-color-a) inset;
-}
-.loader:after {
-  box-shadow: 0 5px 0 var(--bg-color-2) inset;
-  animation: rotate 2s linear infinite;
-}
+    .loader h1 span {
+      font-size: 2rem;
+    }
 
-@keyframes rotate {
-  0% {  transform: rotate(0)}
-  100% { transform: rotate(360deg)}
-}
+    .loader:before,
+    .loader:after {
+      content: '';
+      border-radius: 50%;
+      position: absolute;
+      inset: 0;
+      box-shadow: 0 0 10px 2px var(--bg-color-a) inset;
+    }
 
-  .loaderL {
-  display: inline-block;
-  position: relative;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-}
-.loaderL::after {
-  content: '';  
-  width: 2.5px;
-  height: 2.5px;
-  border-radius: 50%;
-  background: currentColor;
-  position: absolute;
-  bottom: 4.5px;
-  right: -5.5px;
-  box-sizing: border-box;
-  animation: animloaderL 1s linear infinite;
-}
+    .loader:after {
+      box-shadow: 0 5px 0 var(--bg-color-2) inset;
+      animation: rotate 2s linear infinite;
+    }
 
-@keyframes animloaderL {
-  0% {
-    box-shadow: 10px 0 rgba(255, 255, 255, 0), 20px 0 rgba(255, 255, 255, 0);
-  }
-  50% {
-    box-shadow: 10px 0 white, 20px 0 rgba(255, 255, 255, 0);
-  }
-  100% {
-    box-shadow: 10px 0 white, 20px 0 white;
-  }
-}
+    @keyframes rotate {
+      0% {
+        transform: rotate(0)
+      }
 
-.historyItem {
-  width: 100%;
-    padding: 10px 17.5px;
-    padding-top: 15px;
-    background: #202d3aba;
-    border: 1px solid var(--bg-color-a);
-    border-radius: 15px;
-    margin: 15px 0;
-    display: grid;
-}
+      100% {
+        transform: rotate(360deg)
+      }
+    }
 
-.historyItem a{
-    text-align: center;
-    width: 100%;
-    text-decoration: none;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    margin-right: 0;
-    font-weight: 700;
-}
+    .loaderL {
+      display: inline-block;
+      position: relative;
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+    }
 
-.close-btn{
-  width: 30px;
-    padding: 5px;
-    margin-top: -2.5px;
-    border-radius: 10px;
-    position: absolute;
-    right: 20px;
-    box-shadow: 0px 0px 0px transparent;
-}
+    .loaderL::after {
+      content: '';
+      width: 2.5px;
+      height: 2.5px;
+      border-radius: 50%;
+      background: currentColor;
+      position: absolute;
+      bottom: 4.5px;
+      right: -5.5px;
+      box-sizing: border-box;
+      animation: animloaderL 1s linear infinite;
+    }
 
-.close-btn span{font-size: 18px;}
+    @keyframes animloaderL {
+      0% {
+        box-shadow: 10px 0 rgba(255, 255, 255, 0), 20px 0 rgba(255, 255, 255, 0);
+      }
 
-#welcome{
-  display: block;
- position: absolute;
- left: 50%;
-    height: 100dvh;
-    width: 100%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: drop-shadow(0px 0px 6px black);
-}
+      50% {
+        box-shadow: 10px 0 white, 20px 0 rgba(255, 255, 255, 0);
+      }
 
-#welcome h1{
-  font-family: "Pacifico", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 3.5rem;
-  transition: all 0.4s;
-  background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
-	  -webkit-background-clip: text;
-    text-align: center;
-	  background-clip: text;
-	  -webkit-text-fill-color: transparent;
-}
+      100% {
+        box-shadow: 10px 0 white, 20px 0 white;
+      }
+    }
 
-#welcome h2{
-  font-family: "Pacifico", cursive;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  transition: all 0.4s;
-    width: max-content;
-    display: none;
-    opacity: 0;
-    font-size: 1.5rem;
-}
+    .historyItem {
+      width: 100%;
+      padding: 10px 17.5px;
+      padding-top: 15px;
+      background: #202d3aba;
+      border: 1px solid var(--bg-color-a);
+      border-radius: 15px;
+      margin: 15px 0;
+      display: grid;
+    }
 
-#welcome h2 p{
-  font-size:15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: justify;
-  padding: 10px 15px;
-  color: rgb(235, 241, 255);
-}
+    .historyItem.mrt {
+      display: flex;
+      gap: 10px;
+    }
 
-#welcome h2 img{
-  width: 10rem;
-  margin-bottom: 1rem;
-}
-
-#welcome h3{
-  font-size: 2rem;
-    background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: "Pacifico", cursive;
-    font-weight: 200;
-    font-style: normal;
-}
-
-.gget-started{
-  width: 90%;
-  position: absolute;
-  bottom: 30px;
-  margin: auto;
-  padding: 15px 17.5px;
-  font-size: 18px;
-  font-weight: 650;
-  opacity: 0;
-  display: none;
-}
-
-#get-started::before{
-  content: 'Terms and Conditions apply*';
-  font-size: 12px;
-  color: #7b92a9;
-  text-align: center;
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  font-weight: normal;
-  transform: translateX(-50%);
-}
-
-#enter-name{
-  display: none;
-  width: 90%;
-  line-height: 3;
-}
-
-#welcome .globalSearch{padding-left: 15px;}
-
-#app{display: none;}
-
-  @media screen and (min-width: 850px) {
-    .bottomNav{top: 0; bottom: auto;  padding: 25px 20px;     border-radius: 0px 0px 17.5px 17.5px ;
-      width: calc(100%/3); left: 50%; transform: translateX(-50%);
-      box-shadow: 0px 0px 10px var(--bg-color-0);}
-      .bottomNav .main-btn{
+    .historyItem.mrt img {
       width: 5rem;
-      height: 3rem;
+      border-radius: 10px;
     }
-    .bottomNav .main-btn p{display: none;}
-    .bottomNav .main-btn.ai{bottom: auto; top: 0;}
-    nav{width: calc(100%/4);}
-    .page{height: calc(100% - 6rem);}
-    #welcome h2 p{
-      font-size:20px;
-      text-align: center;
-    }
- }
 
-.accBox{
-  flex: 1;
-  background: var(--bg-color-a);
-  padding: 20px;
-  text-align: left;
-  border-radius: 15px;
-}
- 
+    .historyItem.mrt .pill {
+      background: #7b92a9b9;
+      color: var(--bg-color-0);
+      padding: 2px 10px;
+      margin: 5.5px 0;
+      font-weight: 650;
+      border-radius: 10px;
+      width: fit-content;
+    }
+
+    .historyItem a {
+      text-align: center;
+      width: 100%;
+      text-decoration: none;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      margin-right: 0;
+      font-weight: 700;
+    }
+
+    .close-btn {
+      width: 30px;
+      padding: 5px;
+      margin-top: -2.5px;
+      border-radius: 10px;
+      position: absolute;
+      right: 20px;
+      box-shadow: 0px 0px 0px transparent;
+    }
+
+    .close-btn span {
+      font-size: 18px;
+    }
+
+    #welcome {
+      display: block;
+      position: absolute;
+      left: 50%;
+      height: 100dvh;
+      width: 100%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0px 0px 6px black);
+    }
+
+    #welcome h1 {
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 3.5rem;
+      transition: all 0.4s;
+      background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
+      -webkit-background-clip: text;
+      text-align: center;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #welcome h2 {
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      font-style: normal;
+      text-align: center;
+      transition: all 0.4s;
+      width: max-content;
+      display: none;
+      opacity: 0;
+      font-size: 1.5rem;
+    }
+
+    #welcome h2 p {
+      font-size: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: justify;
+      padding: 10px 15px;
+      color: rgb(235, 241, 255);
+    }
+
+    #welcome h2 img {
+      width: 10rem;
+      margin-bottom: 1rem;
+    }
+
+    #welcome h3 {
+      font-size: 2rem;
+      background: -webkit-linear-gradient(0deg, #32475a, #7b92a9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: "Pacifico", cursive;
+      font-weight: 200;
+      font-style: normal;
+    }
+
+    .gget-started {
+      width: 90%;
+      position: absolute;
+      bottom: 30px;
+      margin: auto;
+      padding: 15px 17.5px;
+      font-size: 18px;
+      font-weight: 650;
+      opacity: 0;
+      display: none;
+    }
+
+    #get-started::before {
+      content: 'Terms and Conditions apply*';
+      font-size: 12px;
+      color: #7b92a9;
+      text-align: center;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      font-weight: normal;
+      transform: translateX(-50%);
+    }
+
+    #enter-name {
+      display: none;
+      width: 90%;
+      line-height: 3;
+    }
+
+    #welcome .globalSearch {
+      padding-left: 15px;
+    }
+
+    #app {
+      display: none;
+    }
+
+    @media screen and (min-width: 850px) {
+      .bottomNav {
+        top: 0;
+        bottom: auto;
+        padding: 25px 20px;
+        border-radius: 0px 0px 17.5px 17.5px;
+        width: calc(100%/3);
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0px 0px 10px var(--bg-color-0);
+      }
+
+      .bottomNav .main-btn {
+        width: 5rem;
+        height: 3rem;
+      }
+
+      .bottomNav .main-btn p {
+        display: none;
+      }
+
+      .bottomNav .main-btn.ai {
+        bottom: auto;
+        top: 0;
+      }
+
+      nav {
+        width: calc(100%/4);
+      }
+
+      .page {
+        height: calc(100% - 6rem);
+      }
+
+      #welcome h2 p {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    .accBox {
+      flex: 1;
+      background: var(--bg-color-a);
+      padding: 20px;
+      text-align: left;
+      border-radius: 15px;
+    }
+
+    #loctPage {
+      display: none;
+      margin-top: 5.5rem;
+    }
+
+    .chat-container {
+      width: 100%;
+      padding: 10px;
+      height: calc(100% - 105px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+    }
+
+    .chat-message {
+      margin-bottom: 10px;
+    }
+
+    .user-message {
+      text-align: right;
+      color: var(--bg-color-2);
+      background: var(--bg-color-1);
+      margin-left: 20%;
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    .bot-message {
+      margin: 20px 0;
+      text-align: left;
+      color: var(--bg-color-0);
+      background: var(--bg-color-2);
+      margin-right: 15%;
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    .bot-message img {
+      border-radius: 10px;
+    }
+
+    .input-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .input-field {
+      flex: 1;
+      padding: 10px;
+      border: 0;
+      height: 100%;
+      box-shadow: 0 0 0;
+      margin: 0;
+    }
   </style>
 </head>
+
 <body>
   <div class="boot" id="boot">
     <img src="logo512.png" />
@@ -522,226 +688,603 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;">Your sustainable travel companion.</span>
         <br>
-        <p>Discover a new way to travel that cares for the planet. Project Morpheus connects you with eco-friendly destinations, stays, and experiences. Our mission is to make your journeys more sustainable while supporting local communities and preserving nature. Start exploring and make responsible travel choices that make a difference with us.</p>
+        <p>Discover a new way to travel that cares for the planet. Project Morpheus connects you with eco-friendly
+          destinations, stays, and experiences. Our mission is to make your journeys more sustainable while supporting
+          local communities and preserving nature. Start exploring and make responsible travel choices that make a
+          difference with us.</p>
       </h2>
-      <button class="main-btn gget-started" id="get-started"
-        onclick="
+      <button class="main-btn gget-started" id="get-started" onclick="
           document.getElementById('wel2').style.opacity = '0'
           document.getElementById('get-started').style.opacity = '0'
           setTimeout(() => {
             document.getElementById('wel2').style.display = 'none'
             document.getElementById('enter-name').style.display = 'block'
           }, 1000);
-        "
-      >Get Started</button>
+        ">Get Started</button>
       <div id="enter-name">
         <h3>Let's create you a profile:</h3>
         <h4>You first Name:</h4>
-        <input type="text" class="globalSearch" aria-label="first-name" style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter your first Name" required>
+        <input type="text" class="globalSearch" aria-label="first-name"
+          style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter your first Name" required>
         <h4>You last Name (optional):</h4>
-        <input type="text" class="globalSearch" aria-label="second-name" style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter your second Name">
+        <input type="text" class="globalSearch" aria-label="second-name"
+          style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter your second Name">
         <h4>Email:</h4>
-        <input type="email" class="globalSearch" aria-label="email" style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter your email id">
+        <input type="email" class="globalSearch" aria-label="email"
+          style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter your email id">
         <h4>Password:</h4>
-        <input type="password" class="globalSearch" aria-label="password" style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter the password">
-        <button class="main-btn gget-started" id="Save-user" style="display: flex; opacity: 1; align-items: center; justify-content: center; gap: 7.5px;" disabled> <span class="material-symbols-rounded">travel_explore</span>Start traveling</button>
-
+        <input type="password" class="globalSearch" aria-label="password"
+          style="margin: auto; box-shadow: 0px 0px 0px transparent;" placeholder="Enter the password">
+        <button class="main-btn gget-started" id="Save-user"
+          style="display: flex; opacity: 1; align-items: center; justify-content: center; gap: 7.5px;" disabled> <span
+            class="material-symbols-rounded">travel_explore</span>Start traveling</button>
       </div>
     </div>
     <div id="app">
       <div class="topNav">
-        <button class="main-btn" style="z-index: 99999; box-shadow: 0px 0px 0px transparent;" onclick="document.getElementById('nav').classList.toggle('active')"><span class="material-symbols-rounded">
-          menu
+        <button class="main-btn" style="z-index: 99999; box-shadow: 0px 0px 0px transparent;"
+          onclick="document.getElementById('nav').classList.toggle('active')"><span class="material-symbols-rounded">
+            menu
           </span></button>
-        <div style="display: flex; align-items: center; flex: 1; padding-left: 12.5px;" onclick="switchPage('map', 'mapBtn')">
+        <div style="display: flex; align-items: center; flex: 1; padding-left: 12.5px;"
+          onclick="switchPage('map', 'mapBtn')">
           <span class="material-symbols-rounded" style="z-index: 2; font-size: 18px ;">
             search
           </span>
-            <input type="search" class="globalSearch" placeholder="Search on the map"  style="box-shadow: 0px 0px 0px transparent;" id="gmap-search"/>
+          <input type="search" class="globalSearch" placeholder="Search on the map"
+            style="box-shadow: 0px 0px 0px transparent;" id="gmap-search" />
         </div>
         <button class="main-btn avatar" style="margin-left: -10px; box-shadow: 0px 0px 0px transparent;" onclick="openModal('aboutAcc')
               document.getElementById('nav').classList.remove('active')              ">
           <span class="material-symbols-rounded">
             person
-            </span>
+          </span>
         </button>
       </div>
-        <nav id="nav">
-          <h3>PROJECT MORPHEUS</h3>
-          <ul>
-            <a href="https://youtu.be/_isjoTAiLNA?feature=shared" target="_blank"><li><span class="material-symbols-rounded">
+      <nav id="nav">
+        <h3>PROJECT MORPHEUS</h3>
+        <ul>
+          <li><span class="material-symbols-rounded">
               movie
-              </span> <h4>Watch Promo</h4></li></a>
-              <a href="privacy.html" target="_blank"><li><span class="material-symbols-rounded">
-              policy
-              </span> <h4>Privacy Statement</h4></li></a>
-            <a href="terms.html" target="_blank"><li><span class="material-symbols-rounded">
-              gavel
-              </span> <h4>Terms and Conditions</h4></li></a>
-            <li  onclick="openModal('aboutCr')"><span class="material-symbols-rounded">
+            </span>
+            <h4>Watch Promo</h4>
+          </li>
+          <a href="privacy.html" target="_blank">
+            <li><span class="material-symbols-rounded">
+                policy
+              </span>
+              <h4>Privacy Statement</h4>
+            </li>
+          </a>
+          <a href="terms.html" target="_blank">
+            <li><span class="material-symbols-rounded">
+                gavel
+              </span>
+              <h4>Terms and Conditions</h4>
+            </li>
+          </a>
+          <li onclick="openModal('aboutCr')"><span class="material-symbols-rounded">
               copyright
-              </span> <h4>Credits</h4></li>
-            <li onclick="openModal('aboutM')"><span class="material-symbols-rounded">
+            </span>
+            <h4>Credits</h4>
+          </li>
+          <li onclick="openModal('aboutM')"><span class="material-symbols-rounded">
               info
-              </span> <h4>About</h4></li>
-          </ul>
-          <img src="logo512.png" />
-          <p>MIT Copyright (c) 2024 project Morpheus  <br>
-            Made by <a href="https://navaneet239.github.io">Navaneet.J</a> and Santhosh Sivakumar</p>
-        </nav>
-        <div class="modal" id="aboutM">
-          <div style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
-            <h1  style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
+            </span>
+            <h4>About</h4>
+          </li>
+        </ul>
+        <img src="logo512.png" />
+        <p>MIT Copyright (c) 2024 project Morpheus <br>
+          Made by <a href="https://navaneet239.github.io">Navaneet.J</a> and Santhosh Sivakumar</p>
+      </nav>
+      <div class="modal" id="aboutM">
+        <div
+          style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #2d3e4d78; border-radius: 15px;">
+          <h1 style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
             font-weight: 200;
             font-style: normal;">About</h1>
-            <button class="main-btn" onclick="closeModal('aboutM')" style="box-shadow: 0px 0px 0px transparent;">
-              <span class="material-symbols-rounded">
-                close
-                </span>
-            </button>
-          </div>
-          <div>
-            <CENTER>
-              <img src="logo512.png" />
-              <h2>PROJECT MORPHEUS</h2>
-              <p>v0.1.5 (Alpha edition)</p>
-            </CENTER>
-          </div>
+          <button class="main-btn" onclick="closeModal('aboutM')" style="box-shadow: 0px 0px 0px transparent;">
+            <span class="material-symbols-rounded">
+              close
+            </span>
+          </button>
         </div>
-        <div class="modal" id="aboutCr">
-          <div style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
-            <h1  style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
+        <div>
+          <CENTER>
+            <img src="logo512.png" />
+            <h2>PROJECT MORPHEUS</h2>
+            <p>v0.2.0 (Beta version)</p>
+          </CENTER>
+        </div>
+      </div>
+      <div class="modal" id="addBusi">
+        <div
+          style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #2d3e4d78; border-radius: 15px;">
+          <h1 style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
+            font-weight: 200;
+            font-style: normal;">Add your Business</h1>
+          <button class="main-btn" onclick="closeModal('addBusi')" style="box-shadow: 0px 0px 0px transparent;">
+            <span class="material-symbols-rounded">
+              close
+            </span>
+          </button>
+        </div>
+        <div>
+          <br>
+          <h4 style="margin-bottom: 5px;">Business name:</h4>
+          <input type="text" class="globalSearch" aria-label="first-name"
+            style="margin: auto; box-shadow: 0px 0px 0px transparent;  padding-left: 10px;"
+            placeholder="Enter your business Name" required>
+          <h4 style="margin-bottom: 5px;">Business location:</h4>
+          <input type="text" class="globalSearch" aria-label="first-name"
+            style="margin: auto; box-shadow: 0px 0px 0px transparent; padding-left: 10px;"
+            placeholder="Enter your location" required>
+          <h4 style="margin-bottom: 5px;">Business Kind:</h4>
+          <select id="businessKind" style="width: 100%;
+                padding: 15px;
+                background: var(--bg-color-1);
+                color: var(--bg-color-2);
+                border: 0px;
+                border-radius: 10px;
+              ">
+            <option>Select</option>
+            <option>Medical/pharma</option>
+            <option>consumer store</option>
+            <option>Restaurant</option>
+            <option>Finantial</option>
+            <option>Boutiues</option>
+            <option>Retailer</option>
+            <option>Hotel</option>
+            <option>consumer stall</option>
+            <option>Gym</option>
+            <option>Educational institute</option>
+            <option>Tech based</option>
+            <option>Mall/Shopping complex</option>
+            <option>Leasures</option>
+            <option>Club/Entertainment</option>
+            <option>Theatre </option>
+            <option>Travelling</option>
+            <option>Resorts</option>
+          </select>
+          <button class="main-btn" style="    padding: 15px;
+                  font-size: 18px;
+                  font-weight: 650;
+                  width: 100%;
+                  margin-top: 1.5rem;
+                  box-shadow: 0px 2px 5px #7b92a985;"
+            onclick="alert('Your Business has been Registered. Please wait for verification. Once verified, Your portal will be ready.'); closeModal('addBusi')">
+            <p>Register</p>
+          </button>
+        </div>
+      </div>
+      <div class="modal" id="aboutCr">
+        <div
+          style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #2d3e4d78; border-radius: 15px;">
+          <h1 style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
             font-weight: 200;
             font-style: normal;">Credits</h1>
-            <button class="main-btn" onclick="closeModal('aboutCr')" style="box-shadow: 0px 0px 0px transparent;">
-              <span class="material-symbols-rounded">
-                close
-                </span>
-            </button>
-          </div>
-          <div>
-            <CENTER>
-              <img src="logo512.png" style="width: 10rem; margin-bottom: 0.35rem;"/>
-              <h2 style="margin-bottom: 0.25rem;">The lore of Credit<span class="loaderL">s</span></h2>
-              <div style="line-height: 2;">
-                <p><b>Maps</b>: <a href="https://maps.google.com">Google Maps</a></p>
-                <p><b>Chatbot</b>: <a href="https://copilot.microsoft.com">Copilot</a></p>
-                <p><b>Fonts and Icons</b>: <a href="https://fonts.google.com/icons">Google fonts - icons</a></p>
-              </div>
-            </CENTER>
-          </div>
+          <button class="main-btn" onclick="closeModal('aboutCr')" style="box-shadow: 0px 0px 0px transparent;">
+            <span class="material-symbols-rounded">
+              close
+            </span>
+          </button>
         </div>
-        <div class="modal" id="aboutAcc" style="padding-bottom: 12.5px;">
-          <div style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #131c2454; border-radius: 15px;">
-            <h1 style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
+        <div>
+          <CENTER>
+            <img src="logo512.png" style="width: 10rem; margin-bottom: 0.35rem;" />
+            <h2 style="margin-bottom: 0.25rem;">The lore of Credit<span class="loaderL">s</span></h2>
+            <div style="line-height: 2;">
+              <p><b>Maps</b>: <a href="https://maps.google.com">Google Maps</a></p>
+              <p><b>Fonts and Icons</b>: <a href="https://fonts.google.com/icons">Google fonts - icons</a></p>
+            </div>
+          </CENTER>
+        </div>
+      </div>
+      <div class="modal" id="aboutAcc" style="padding-bottom: 12.5px;">
+        <div
+          style="display: flex;align-items: center; justify-content: space-between;padding: 15px 25px; padding-right: 15px; background: #2d3e4d78; border-radius: 15px;">
+          <h1 style="font-size: 1.5rem; font-family: 'Pacifico', cursive;
             font-weight: 200;
             font-style: normal;">Account Panel</h1>
-            <button class="main-btn" onclick="closeModal('aboutAcc')" style="box-shadow: 0px 0px 0px transparent;">
-              <span class="material-symbols-rounded">
-                close
-                </span>
-            </button>
-          </div>
-          <div>
-            <CENTER>
-              <div id="greeting" style="display: none; margin-top: 20px;">
-                <div id="user-greeting"></div>
-            </div>
-            </CENTER>
-          </div>
+          <button class="main-btn" onclick="closeModal('aboutAcc')" style="box-shadow: 0px 0px 0px transparent;">
+            <span class="material-symbols-rounded">
+              close
+            </span>
+          </button>
         </div>
+        <div>
+          <CENTER>
+            <div style="
+            border: 1px solid #394b5d;
+            width: fit-content;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 50%;
+            background: rgb(39 51 61 / 45%);
+        ">
+              <span class="material-symbols-rounded" style="font-size: 35px;">
+                person
+              </span>
+            </div>
+            <div id="greeting" style="display: none; margin-top: 20px;">
+              <div id="user-greeting"></div>
+            </div>
+          </CENTER>
+        </div>
+      </div>
       <div class="content">
         <div class="page active" id="map" style="padding: 10px;">
-          <iframe id="mapIfr" style="    height: calc(100% - 45px);" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <p style="
-          text-align: center;
-          padding-top: 10px;">Powered by <a href="https://maps.google.com">Google Maps</a></p>
+          <iframe id="mapIfr" style="    height: calc(100% - 5px);"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="page" id="ai" style="overflow: hidden;">
-          <center style="
-              padding: 20px 0px;
-              padding-bottom: 35px;">
-            <h1>Ms. MORPHEUS</h1>
+          <center style="padding-top: 20px;">
+            <h1>DREAMBOT</h1>
             <h4>Your Personal Travel Assistant</h4>
+            <p>Start your conversation - Anything about Travel</p>
           </center>
-          <div id="aiPage">
-            <span class="loader"><h1><span class="material-symbols-rounded">
-              robot_2
-              </span></h1></span>
-            <p>Your Assistant is <span class="loaderL">loading</span></p>
+
+          <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+              <div class="chat-message bot-message">
+                <b>Bonjour 👋!!</b> I'm DreamBot, your personal travel Assistant. How may I help you for your travel
+                journey?<br>
+                <br>
+                <b>Try These prompts to start:</b>
+                <ol style="padding: 10px 25px;">
+                  <li>ATMs near me.</li>
+                  <li>Restaurants around my location.</li>
+                  <li>Best hotels near me to stay.</li>
+                  <li>Any malls near me?</li>
+                  <li>What is the weather?</li>
+                </ol>
+                <b>Note:</b> Dreambot is still in development and is subject to make errors.
+                <br>
+                <p style="background-color: #25323e;margin-top: 15px;color: #7b92a9;padding: 5px 10px;border-radius: 7.5px;">Results are for current location: <b>Coimbatore</b></p>
+              </div>
+            </div>
+            <div class="input-container">
+              <input type="text" id="message-input" class="input-field globalSearch" placeholder="Type your message...">
+              <button id="send-button" class="main-btn" style="
+                box-shadow: 0 0 0 0;
+            "><span class="material-symbols-rounded">
+                  send
+                </span></button>
+            </div>
           </div>
-          <div style="
-          width: 100%;
-          height: 100%;
-          border-radius: 20px;
-          overflow: hidden;
-          ">
-            <iframe src="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx" style="margin-top: -155px;"></iframe>
-            <p style="
-            text-align: center;
-            padding-top: 10px;
-        ">Powered by <a href="https://copilot.microsoft.com">Copilot</a></p>
-          </div>
+          <!--  
+         5d9b8b9921f44c088af1e17bf2d461f9
+        -->
+
+          <script>
+            (function (d, s, id) {
+              if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                  window.__TOMORROW__.renderWidget();
+                }
+                return;
+              }
+              const fjs = d.getElementsByTagName(s)[0];
+              const js = d.createElement(s);
+              js.id = id;
+              js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+              fjs.parentNode.insertBefore(js, fjs);
+            })(document, 'script', 'tomorrow-sdk');
+            // Function to generate HTML response based on the user's message
+            function getResponse(message) {
+              let htmlResponse = '';
+              if (message.toLowerCase().includes('atm')) {
+                htmlResponse = `
+                      <div style="padding: 10px;">
+                          <div style="margin-bottom: 10px;">
+                              <h3>CSB Bank ATM</h3>
+                              <p>Shop No: 48, Kamarajar Rd | 090726 01085</p>
+                              <span style='opacity:0.5'>Open 24 hours</span>
+                          </div>
+                          <div style="margin-bottom: 10px;">
+                              <h3>Axis Bank ATM</h3>
+                              <p>D No, 303/2, Trichy Rd | 1860 500 5555</p>
+                              <span style='opacity:0.5'>Open 24 hours</span>
+                          </div>
+                      </div>
+                  `;
+              } else if (message.toLowerCase().includes('restaurant')) {
+                htmlResponse = `
+                      <div style="padding: 10px;">
+                          <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                              <img src="https://media-cdn.tripadvisor.com/media/photo-i/2a/56/19/e9/dinner-cavern-s-combo.jpg" style="width: 150px; height: 100px; object-fit: cover;">
+                              <div>
+                                  <h3>Cavern Bar and Kitchen</h3>
+                                  <p>312 Bharathiar Road Hotel CAG Pride</p>
+                                  <span style='opacity:0.5'>Cuisines: Asian, Contemporary, European, Fusion, Indian</span>
+                              </div>
+                          </div>
+                          <div style="display: flex; gap: 10px;">
+                              <img src="https://media-cdn.tripadvisor.com/media/photo-i/11/85/62/be/img-20171215-164109-largejpg.jpg" style="width: 150px; height: 100px; object-fit: cover;">
+                              <div>
+                                  <h3>Aroma Bakery</h3>
+                                  <p>#301 of 602 Restaurants in Coimbatore</p>
+                                  <span style='opacity:0.5'>Opposite Railway Station, 0.2 km from Singanallur Station</span>
+                              </div>
+                          </div>
+                      </div>
+                  `;
+              } else if (message.toLowerCase().includes('hotel')) {
+                htmlResponse = `
+                      <div style="padding: 10px;">
+                          <div style="margin-bottom: 10px;">
+                              <h3>Zibe Coimbatore by GRT Hotels</h3>
+                              <p>427, 2B, Avinashi Rd, Peelamedu, Coimbatore, Tamil Nadu 641004 | 080 6925 0565</p>
+                          </div>
+                          <div style="margin-bottom: 10px;">
+                              <h3>Vivanta Coimbatore</h3>
+                              <p>105, Race Course Rd, Gopalapuram, Coimbatore, Tamil Nadu 641018 | 0422 668 1000</p>
+                          </div>
+                      </div>
+                  `;
+              } else if (message.toLowerCase().includes('pharmacy')) {
+                htmlResponse = `
+                      <div style="padding: 10px;">
+                          <div style="margin-bottom: 10px;">
+                              <h3>Apollo Pharmacy Singanallur</h3>
+                              <p>Shop No 1, 48 A48 B, Kamarajar Rd | 0422 259 4056</p>
+                              <span style='opacity:0.5'>Open Closes 11 pm, Delivery</span>
+                          </div>
+                          <div style="margin-bottom: 10px;">
+                              <h3>Shree Shakthi Pharmacy</h3>
+                              <p>No. 2088, Trichy Road, Opp to TVH, Singanallur | 0422 450 8100</p>
+                              <span style='opacity:0.5'>Open Closes 9:30 pm, Delivery</span>
+                          </div>
+                      </div>
+                  `;
+              } else if (message.toLowerCase().includes('mall') || message.toLowerCase().includes('shopping')) {
+                htmlResponse = `
+                      <div style="padding: 10px;">
+                          <div style="margin-bottom: 10px;">
+                              <h3>Fun Republic Mall</h3>
+                              <p>Avinashi Rd, next to PSG Tech | 095132 44317</p>
+                              <span style='opacity:0.5'>Open Closes 10 pm</span>
+                          </div>
+                          <div style="margin-bottom: 10px;">
+                              <h3>Brookefields Mall</h3>
+                              <p>67-71, Dr Krishnasamy Mudaliyar Rd</p>
+                              <span style='opacity:0.5'>Open Closes 11 pm</span>
+                          </div>
+                      </div>
+                  `;
+              } else if (message.toLowerCase().includes('weather')) {
+                // Example weather response
+                htmlResponse = `
+ <div class="tomorrow"
+           data-location-id=""
+           data-language="EN"
+           data-unit-system="METRIC"
+           data-skin="dark"
+           data-widget-type="upcoming"
+           style="padding-bottom:22px;position:relative;"
+        >
+          <a
+            href="https://www.tomorrow.io/weather-api/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+          >
+            <img
+              alt="Powered by the Tomorrow.io Weather API"
+              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+              width="250"
+              height="18"
+            />
+          </a>
+        </div>
+                  `;
+              } else {
+                htmlResponse = `<div style="padding: 10px;">Sorry, I didn't understand that request.</div>`;
+              }
+              return htmlResponse;
+            }
+
+            // Function to handle sending messages
+            async function sendMessage(message) {
+              const chatMessages = document.getElementById("chat-messages");
+
+              const userMessageElement = document.createElement('div');
+              userMessageElement.classList.add('user-message');
+              userMessageElement.textContent = message;
+              chatMessages.appendChild(userMessageElement);
+
+              // Generate and display bot response
+              const botResponseHTML = getResponse(message);
+              const botMessageElement = document.createElement('div');
+              botMessageElement.classList.add('bot-message');
+              botMessageElement.innerHTML = botResponseHTML;
+              chatMessages.appendChild(botMessageElement);
+
+              chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Event listener for the send button
+            document.getElementById('send-button').addEventListener('click', () => {
+              const messageInput = document.getElementById('message-input');
+              const userMessage = messageInput.value;
+              if (userMessage.trim() !== '') {
+                sendMessage(userMessage);
+                messageInput.value = '';
+              }
+            });
+
+            // Add event listener for Enter key
+            document.getElementById('message-input').addEventListener('keypress', (event) => {
+              if (event.key === 'Enter') {
+                document.getElementById('send-button').click()
+              }
+            });
+          </script>
+
         </div>
         <div class="page" id="history">
-          <h1 style="margin-top: 10px; margin-bottom: 10px; text-align: center; width: 100%;">Your Recent Visits</h1>
+          <h1 style="margin-top: 10px; margin-bottom: 10px; text-align: center; width: 100%;">Your Dashboard</h1>
           <div style="display: flex; align-items: center; gap: 20px; justify-content: center; margin-bottom: 20px;">
             <div style="display: flex; align-items: center; gap: 10px;"
-              onclick="alert('Your Total Visits counter - As you surf the map, the counter will increase.')"
-            >
+              onclick="alert('Your Total Visits counter - As you surf the map, the counter will increase.')">
               <span class="material-symbols-rounded">travel_explore</span>
               <p id="totalSearch"></p>
             </div>
             <p>|</p>
             <div style="display: flex; align-items: center; gap: 15px;"
-              onclick="alert('Powered by Ecosia - The greenest way to search. For every search you do in Morpheus, Ecosia will plant a tree. Learn more on www.ecosia.org')"  
-            >
+              onclick="alert('Powered by Ecosia - The greenest way to search. For every search you do in Morpheus, Ecosia will plant a tree. Learn more on www.ecosia.org')">
               <span class="material-symbols-rounded">nature_people</span>
               <p id="totalSearchPlant"></p>
             </div>
             <p>|</p>
             <div style="display: flex; align-items: center; gap: 10px;"
-              onclick="alert('The Miles Score: A credit based rewarding system where each search or a contribution wins you points that can be redeemed!')"
-            >
+              onclick="alert('The Miles Score: A credit based rewarding system where each search or a contribution wins you points that can be redeemed!')">
               <span class="material-symbols-rounded">flag_2</span>
               <p id="milesScore"></p>
             </div>
           </div>
+          <h3 style="display: flex; align-items: center; gap: 7.5px; justify-content: center;"> <span
+              class="material-symbols-rounded">update</span>History:</h3>
           <div id="historyPage"></div>
+        </div>
+        <div class="page" id="market">
+          <h1 style="margin-top: 10px; margin-bottom: 10px; text-align: center; width: 100%; margin-top: 2rem;">
+            Marketplace</h1>
+          <p style="text-align: center; margin-bottom: -4.5rem;">
+            One stop bazaar for customers and shopkeepers.<br> <i>#BeVocalGoLocal</i>
+          </p>
+
+          <div id="mrktHome"
+            style="width: 100%; height: 100%; display: grid; align-items: center;    gap: 20px; align-content: center;">
+            <h3 style="text-align: center;">What do you choose:</h3>
+            <button class="main-btn"
+              onclick="openModal('addBusi');document.getElementById('nav').classList.remove('active')"
+              style="padding: 20px;display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 650; gap: 10px;"><span
+                class="material-symbols-rounded">
+                add_business
+              </span>
+              <p>Add your Business</p>
+            </button>
+            <button class="main-btn"
+              onclick="document.getElementById('loctPage').style.display = 'block';document.getElementById('mrktHome').style.display = 'none' "
+              style="padding: 20px;display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 650; gap: 10px;"><span
+                class="material-symbols-rounded">
+                explore
+              </span>
+              <p>Explore your locality</p>
+            </button>
+          </div>
+
+          <div id="loctPage">
+            <h3>Top places in Chennai</h3>
+            <div class="historyItem mrt" onclick="switchMapBasedMrt('Ananda Bhavan')">
+              <div class="imgPart">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-p/1b/18/b6/4b/photo9jpg.jpg" />
+              </div>
+              <div class="docPart">
+                <h3>Ananda Bhavan</h3>
+                <div class="pill">Restaurant</div>
+                <div class="ratings">
+                  ⭐⭐⭐⭐
+                </div>
+              </div>
+            </div>
+            <div class="historyItem mrt" onclick="switchMapBasedMrt('Apollo Pharmacy - Chrompet')">
+              <div class="imgPart">
+                <img
+                  src="https://content.jdmagicbox.com/v2/comp/chennai/c4/044pxx44.xx44.150911124153.p2c4/catalogue/apollo-pharmacy-chromepet-chennai-chemists-4ezyqmw-250.jpg" />
+              </div>
+              <div class="docPart">
+                <h3>Apollo Pharmacy, Chrompet</h3>
+                <div class="pill">Pharmacy</div>
+                <div class="ratings">
+                  ⭐⭐⭐⭐
+                </div>
+              </div>
+            </div>
+            <div class="historyItem mrt" onclick="switchMapBasedMrt('Poorvika')">
+              <div class="imgPart">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTpNjyvlKJR6lP0QloVS5MUolQP2WLXmO-zQ&s" />
+              </div>
+              <div class="docPart">
+                <h3>Poorvika</h3>
+                <div class="pill">Tech Sore</div>
+                <div class="ratings">
+                  ⭐⭐⭐⭐
+                </div>
+              </div>
+            </div>
+            <div class="historyItem mrt" onclick="switchMapBasedMrt('VV Mart')">
+              <div class="imgPart">
+                <img
+                  src="data:image/jpeg;base64,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" />
+              </div>
+              <div class="docPart">
+                <h3>VV Mart</h3>
+                <div class="pill">Consumer Store</div>
+                <div class="ratings">
+                  ⭐⭐⭐⭐
+                </div>
+              </div>
+            </div>
+            <div class="historyItem mrt" onclick="switchMapBasedMrt('Phoenix mall velachery')">
+              <div class="imgPart">
+                <img src="https://imgmedia.lbb.in/media/2021/10/617a553981007739b814507f_1635407161732.png" />
+              </div>
+              <div class="docPart">
+                <h3>Phoenix mall velachery</h3>
+                <div class="pill">Shopping Complex</div>
+                <div class="ratings">
+                  ⭐⭐⭐⭐
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="bottomNav">
-        <button class="main-btn bottomBtn active" id="mapBtn" onclick="switchPage('map', 'mapBtn')"><span class="material-symbols-rounded">
-          near_me
-          </span><p>Map</p></button>
-        <button class="main-btn bottomBtn ai" id="aiBtn" onclick="switchPage('ai', 'aiBtn')"><span class="material-symbols-rounded">
-          robot_2
+        <button class="main-btn bottomBtn active" id="mapBtn" onclick="switchPage('map', 'mapBtn')"><span
+            class="material-symbols-rounded">
+            near_me
           </span></button>
-        <button class="main-btn bottomBtn" id="recentsBtn" onclick="switchPage('history', 'recentsBtn')"><span class="material-symbols-rounded">
-          update
-          </span><p>History</p></button>
+        <button class="main-btn bottomBtn" id="aiBtn" onclick="switchPage('ai', 'aiBtn')"><span
+            class="material-symbols-rounded">
+            robot_2
+          </span></button>
+        <button class="main-btn bottomBtn" id="marktBtn" onclick="switchPage('market', 'marktBtn')"><span
+            class="material-symbols-rounded">
+            storefront
+          </span></button>
+        <button class="main-btn bottomBtn" id="recentsBtn" onclick="switchPage('history', 'recentsBtn')"><span
+            class="material-symbols-rounded">
+            Dashboard_2
+          </span></button>
       </div>
     </div>
   </div>
 
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const firstNameInput = document.querySelector('input[aria-label="first-name"]');
       const saveUserButton = document.getElementById('Save-user');
 
       // Ensure elements are found
       if (!firstNameInput || !saveUserButton) {
-          console.error("Required elements not found in the DOM.");
-          return;
+        console.error("Required elements not found in the DOM.");
+        return;
       }
 
       // Function to check the input value and enable/disable the button
       function checkInput() {
-          if (firstNameInput.value.trim() === '') {
-              saveUserButton.disabled = true;
-          } else {
-              saveUserButton.disabled = false;
-          }
+        if (firstNameInput.value.trim() === '') {
+          saveUserButton.disabled = true;
+        } else {
+          saveUserButton.disabled = false;
+        }
       }
 
       // Initial check to set the button state
@@ -752,47 +1295,47 @@
 
       // Check localStorage for first load
       if (localStorage.getItem('firstLoad') === null || localStorage.getItem('firstLoad') === 'true') {
-          welcomeBoot(); // Assuming this is a function you defined elsewhere
+        welcomeBoot(); // Assuming this is a function you defined elsewhere
       } else {
-          welcomeBackBoot();
-          displayGreeting();
+        welcomeBackBoot();
+        displayGreeting();
       }
 
       // Handle the 'Save user' button click
-      saveUserButton.addEventListener('click', function() {
-          // Get the user's first and second names
-          const firstName = firstNameInput.value;
-          const secondName = document.querySelector('input[aria-label="second-name"]').value;
-          const email = document.querySelector('input[aria-label="email"]').value;
-          
-          // Save names to localStorage
-          localStorage.setItem('firstName', firstName);
-          localStorage.setItem('secondName', secondName);
-          localStorage.setItem('mailId', email);
+      saveUserButton.addEventListener('click', function () {
+        // Get the user's first and second names
+        const firstName = firstNameInput.value;
+        const secondName = document.querySelector('input[aria-label="second-name"]').value;
+        const email = document.querySelector('input[aria-label="email"]').value;
 
-          // Set localStorage to indicate that it's no longer the first load
-          localStorage.setItem('firstLoad', 'false');
+        // Save names to localStorage
+        localStorage.setItem('firstName', firstName);
+        localStorage.setItem('secondName', secondName);
+        localStorage.setItem('mailId', email);
 
-          // Hide the welcome message and show the app
-          document.getElementById('welcome').style.display = 'none';
-          document.getElementById('app').style.display = 'block';
-          displayGreeting();
+        // Set localStorage to indicate that it's no longer the first load
+        localStorage.setItem('firstLoad', 'false');
+
+        // Hide the welcome message and show the app
+        document.getElementById('welcome').style.display = 'none';
+        document.getElementById('app').style.display = 'block';
+        displayGreeting();
       });
 
       function displayGreeting() {
-          // Retrieve the names from localStorage
-          const firstName = localStorage.getItem('firstName') || '';
-          const secondName = localStorage.getItem('secondName') || '';
-          const email = localStorage.getItem('mailId') || '';
+        // Retrieve the names from localStorage
+        const firstName = localStorage.getItem('firstName') || '';
+        const secondName = localStorage.getItem('secondName') || '';
+        const email = localStorage.getItem('mailId') || '';
 
-    // Retrieve the homebase from localStorage
-    const homeBase = localStorage.getItem('homeBase') || 'Click to input';
+        // Retrieve the homebase from localStorage
+        const homeBase = localStorage.getItem('homeBase') || 'Click to input';
 
-          // Create the greeting message
-          const greetingMessage = `Welcome, ${firstName} ${secondName}`.trim();
-          const emailMsg = email.trim();
-          // Display the greeting message
-          document.getElementById('user-greeting').innerHTML = 
+        // Create the greeting message
+        const greetingMessage = `Welcome, ${firstName} ${secondName}`.trim();
+        const emailMsg = email.trim();
+        // Display the greeting message
+        document.getElementById('user-greeting').innerHTML =
           `
             <h2 style="margin-bottom: 5px">${greetingMessage}</h2>
             <p>${emailMsg}</p>
@@ -809,22 +1352,22 @@
             </div>
             `
           ;
-          document.getElementById('greeting').style.display = 'block';
+        document.getElementById('greeting').style.display = 'block';
 
-          document.getElementById('homeBase').addEventListener('click', function() {
-        // Prompt the user to input their Homebase
-        const newHomeBase = prompt("Enter your Home base (City, Country):");
+        document.getElementById('homeBase').addEventListener('click', function () {
+          // Prompt the user to input their Homebase
+          const newHomeBase = prompt("Enter your Home base (City, Country):");
 
-        // If the user enters a value, save it to localStorage and update the display
-        if (newHomeBase) {
+          // If the user enters a value, save it to localStorage and update the display
+          if (newHomeBase) {
             localStorage.setItem('homeBase', newHomeBase);
             document.getElementById('homeBase').textContent = newHomeBase;
-        }
-    });
+          }
+        });
       }
-  });
+    });
 
-    function welcomeBoot(){
+    function welcomeBoot() {
       setTimeout(() => {
         document.getElementById('wel1').style.opacity = '0';
         setTimeout(() => {
@@ -839,7 +1382,7 @@
       }, 4500);
     }
 
-    function welcomeBackBoot(){
+    function welcomeBackBoot() {
       document.getElementById('wel1').style.lineHeight = '1.25'
       document.getElementById('wel1').innerHTML = 'Welcome <br> Back.';
       setTimeout(() => {
@@ -851,82 +1394,93 @@
       }, 4500);
     }
 
-    function boot(){
+    function boot() {
       setTimeout(() => {
         document.getElementById('boot').style.opacity = '0'
         setTimeout(() => {
           document.getElementById('mainB').classList.add('active')
           document.getElementById('boot').style.display = 'none'
-          setTimeout(() => {
-            document.getElementById('aiPage').style.opacity = '0'
-          }, 7500);
         }, 500);
       }, 2000);
     }
 
     boot();
 
-    function switchPage(pg, pgBtn){
+    function switchPage(pg, pgBtn) {
       document.getElementById('map').classList.remove('active')
       document.getElementById('history').classList.remove('active')
+      document.getElementById('market').classList.remove('active')
       document.getElementById('ai').classList.remove('active')
 
       document.getElementById('mapBtn').classList.remove('active')
       document.getElementById('recentsBtn').classList.remove('active')
+      document.getElementById('marktBtn').classList.remove('active')
       document.getElementById('aiBtn').classList.remove('active')
 
       document.getElementById(pg).classList.add('active')
       document.getElementById(pgBtn).classList.add('active')
     }
 
-    function openModal(modal){
+    function openModal(modal) {
       document.getElementById('nav').classList.toggle('active')
       document.getElementById(modal).classList.add('active')
     }
-    function closeModal(modal){
+    function closeModal(modal) {
       document.getElementById(modal).classList.remove('active')
     }
-    document.getElementById('gmap-search').addEventListener('change', function() {
-    var query = this.value;
-    if (query) {
+    document.getElementById('gmap-search').addEventListener('change', function () {
+      var query = this.value;
+      if (query) {
         var mapFrame = document.getElementById('mapIfr');
         var encodedQuery = encodeURIComponent(query);
         var newSrc = `https://www.google.com/maps?q=${encodedQuery}&output=embed`;
         mapFrame.src = newSrc;
 
-            // Save to localStorage
-            saveToHistory(query, newSrc);
-        }
+        // Save to localStorage
+        saveToHistory(query, newSrc);
+      }
     });
 
+    function switchMapBasedMrt(src) {
+      var value = src;
+      var mapFrame = document.getElementById('mapIfr');
+      var encodedQuery = encodeURIComponent(value);
+      var newSrc = `https://www.google.com/maps?q=${encodedQuery}&output=embed`;
+      mapFrame.src = newSrc;
+
+      // Save to localStorage
+      saveToHistory(value, newSrc);
+      switchPage('map', 'mapBtn');
+    }
+
     function saveToHistory(query, src) {
-    // Retrieve the existing history or initialize as an empty array
-    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+      // Retrieve the existing history or initialize as an empty array
+      var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-    // Add the new search to the history
-    history.push({ query: query, src: src });
+      // Add the new search to the history
+      history.push({ query: query, src: src });
 
-    // Store the updated history
-    localStorage.setItem('searchHistory', JSON.stringify(history));
+      // Store the updated history
+      localStorage.setItem('searchHistory', JSON.stringify(history));
 
-    // Update the total number of recent visits
-    var totalSearchPlant = parseInt(localStorage.getItem('totalSearchPlant')) || 0;
-    totalSearchPlant += 1;
-    localStorage.setItem('totalSearchPlant', totalSearchPlant);
+      // Update the total number of recent visits
+      var totalSearchPlant = parseInt(localStorage.getItem('totalSearchPlant')) || 0;
+      totalSearchPlant += 1;
+      localStorage.setItem('totalSearchPlant', totalSearchPlant);
 
-    // Update the history display
-    displayHistory();
-}
+      // Update the history display
+      displayHistory();
+    }
 
-function displayHistory() {
-    var historyPage = document.getElementById('historyPage');
-    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    function displayHistory() {
+      var historyPage = document.getElementById('historyPage');
+      var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-    // Clear the history display
-    historyPage.innerHTML = '';
+      // Clear the history display
+      historyPage.innerHTML = '';
 
-    // Populate the history display
-    history.forEach(function(item, index) {
+      // Populate the history display
+      history.forEach(function (item, index) {
         var historyItem = document.createElement('div');
         historyItem.className = 'historyItem';
         historyItem.innerHTML = `<button class="main-btn close-btn" data-index="${index}"><span class="material-symbols-rounded">close</span></button>
@@ -937,80 +1491,79 @@ function displayHistory() {
             <a href="#" class="main-btn" data-src="${item.src}">View on Map</a>
         `;
         historyPage.appendChild(historyItem);
-    });
+      });
 
-    // Update the total number of recent visits
-    document.getElementById('totalSearch').textContent = history.length;
+      // Update the total number of recent visits
+      document.getElementById('totalSearch').textContent = history.length;
 
-    // Check if the totalSearchPlant element exists and update it
-    var totalSearchPlantElement = document.getElementById('totalSearchPlant');
-    if (totalSearchPlantElement) {
+      // Check if the totalSearchPlant element exists and update it
+      var totalSearchPlantElement = document.getElementById('totalSearchPlant');
+      if (totalSearchPlantElement) {
         var totalSearchPlant = localStorage.getItem('totalSearchPlant') || 0;
         totalSearchPlantElement.textContent = totalSearchPlant;
-    }
+      }
 
-    // Calculate the miles score
-    var milesScore = (history.length * 0.2).toFixed(1);
+      // Calculate the miles score
+      var milesScore = (history.length * 0.2).toFixed(1);
 
-    // Save the miles score to localStorage
-    localStorage.setItem('milesScore', milesScore);
+      // Save the miles score to localStorage
+      localStorage.setItem('milesScore', milesScore);
 
-    // Update the miles score in the UI
-    var milesScoreElement = document.getElementById('milesScore');
-    if (milesScoreElement) {
+      // Update the miles score in the UI
+      var milesScoreElement = document.getElementById('milesScore');
+      if (milesScoreElement) {
         milesScoreElement.textContent = milesScore;
-    }
+      }
 
-    var accMileScoreElement = document.getElementById('accMileScore');
-    if (accMileScoreElement) {
+      var accMileScoreElement = document.getElementById('accMileScore');
+      if (accMileScoreElement) {
         accMileScoreElement.textContent = milesScore;
+      }
+
+      // Add event listeners to all "View on Map" links
+      var links = historyPage.querySelectorAll('.main-btn');
+      links.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          var mapFrame = document.getElementById('mapIfr');
+          mapFrame.src = this.getAttribute('data-src');
+          switchPage('map', 'mapBtn');
+        });
+      });
+
+      // Add event listeners to all close buttons
+      var closeButtons = historyPage.querySelectorAll('.close-btn');
+      closeButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var index = parseInt(this.getAttribute('data-index'));
+          deleteHistoryItem(index);
+          document.getElementById('mapIfr').src = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin';
+        });
+      });
     }
 
-    // Add event listeners to all "View on Map" links
-    var links = historyPage.querySelectorAll('.main-btn');
-    links.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            var mapFrame = document.getElementById('mapIfr');
-            mapFrame.src = this.getAttribute('data-src');
-            switchPage('map', 'mapBtn');
-        });
-    });
+    function deleteHistoryItem(index) {
+      var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-    // Add event listeners to all close buttons
-    var closeButtons = historyPage.querySelectorAll('.close-btn');
-    closeButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            var index = parseInt(this.getAttribute('data-index'));
-            deleteHistoryItem(index);
-            document.getElementById('mapIfr').src = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d65368936.588486426!2d78.27181388142688!3d15.307360990017104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1723734240530!5m2!1sen!2sin';
-        });
-    });
-}
+      // Remove the item at the specified index
+      history.splice(index, 1);
 
-function deleteHistoryItem(index) {
-    var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+      // Store the updated history
+      localStorage.setItem('searchHistory', JSON.stringify(history));
 
-    // Remove the item at the specified index
-    history.splice(index, 1);
+      // Update the history display
+      displayHistory();
+    }
 
-    // Store the updated history
-    localStorage.setItem('searchHistory', JSON.stringify(history));
+    // Load the history when the page loads
+    window.onload = function () {
+      displayHistory();
 
-    // Update the history display
-    displayHistory();
-}
-
-// Load the history when the page loads
-window.onload = function() {
-    displayHistory();
-
-    // Retrieve and display the stored Miles Score
-    var storedMilesScore = localStorage.getItem('milesScore') || '0.0';
-    document.getElementById('milesScore').textContent = storedMilesScore;
-    document.getElementById('accMileScore').textContent = storedMilesScore;
-};
-
+      // Retrieve and display the stored Miles Score
+      var storedMilesScore = localStorage.getItem('milesScore') || '0.0';
+      document.getElementById('milesScore').textContent = storedMilesScore;
+      document.getElementById('accMileScore').textContent = storedMilesScore;
+    };
 
   </script>
   <script src="index.js"></script>
